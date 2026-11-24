@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import LessonScreen from "@/components/LessonScreen";
+import TalkingTomReward from "@/components/TalkingTomReward";
 import { CBSEClass, SubjectType } from "@/lib/curriculum/cbse-data";
 import { IndianLadyVoice } from "@/lib/speech/lady-voice";
 
@@ -10,6 +11,7 @@ export default function HomePage() {
   const [selectedClass, setSelectedClass] = useState<CBSEClass>("Class 3");
   const [selectedSubject, setSelectedSubject] = useState<SubjectType>("tables");
   const [hasStarted, setHasStarted] = useState(false);
+  const [showTomDirect, setShowTomDirect] = useState(false);
 
   const handleStart = () => {
     if (!childName.trim()) {
@@ -32,6 +34,16 @@ export default function HomePage() {
     );
     IndianLadyVoice.speak(greeting);
   };
+
+  if (showTomDirect) {
+    return (
+      <TalkingTomReward
+        childName={childName.trim() || "Aarav"}
+        taskTitle="Fun Play Session"
+        onFinish={() => setShowTomDirect(false)}
+      />
+    );
+  }
 
   if (hasStarted) {
     return (
@@ -196,6 +208,15 @@ export default function HomePage() {
             className="btn-primary w-full py-4 text-xl sm:text-2xl font-black shadow-lg shadow-purple-300 transition cursor-pointer"
           >
             ▶ Start Learning with Teacher 🚀
+          </button>
+
+          {/* Quick Talking Tom Launcher */}
+          <button
+            type="button"
+            onClick={() => setShowTomDirect(true)}
+            className="w-full mt-3 py-3.5 px-4 rounded-2xl bg-gradient-to-r from-amber-400 via-pink-500 to-purple-600 hover:from-amber-500 hover:via-pink-600 hover:to-purple-700 text-white font-black text-sm sm:text-base shadow-md transition cursor-pointer flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-[0.99]"
+          >
+            <span>🐱</span> Play with Talking Tom (2-Min Reward Game) 🎁
           </button>
         </div>
 
