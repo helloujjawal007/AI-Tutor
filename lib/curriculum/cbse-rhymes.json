@@ -1,0 +1,2090 @@
+{
+  "Class 1": [
+    {
+      "id": "c1_r1",
+      "title": "Twinkle Twinkle Little Star",
+      "author": "Traditional",
+      "stanzas": [
+        "Twinkle, twinkle, little star,",
+        "How I wonder what you are!",
+        "Up above the world so high,",
+        "Like a diamond in the sky."
+      ],
+      "moralOrTheme": "Wonder of the cosmos"
+    },
+    {
+      "id": "c1_r2",
+      "title": "Baa Baa Black Sheep",
+      "author": "Traditional",
+      "stanzas": [
+        "Baa, baa, black sheep, have you any wool?",
+        "Yes, sir, yes, sir, three bags full!",
+        "One for the master, and one for the dame,",
+        "And one for the little boy who lives down the lane."
+      ],
+      "moralOrTheme": "Sharing and kindness"
+    },
+    {
+      "id": "c1_r3",
+      "title": "Johny Johny Yes Papa",
+      "author": "Traditional",
+      "stanzas": [
+        "Johny, Johny, Yes, Papa?",
+        "Eating sugar? No, Papa!",
+        "Telling lies? No, Papa!",
+        "Open your mouth, Ha! Ha! Ha!"
+      ],
+      "moralOrTheme": "Honesty with parents"
+    },
+    {
+      "id": "c1_r4",
+      "title": "Hickory Dickory Dock",
+      "author": "Traditional",
+      "stanzas": [
+        "Hickory, dickory, dock,",
+        "The mouse ran up the clock.",
+        "The clock struck one, the mouse ran down,",
+        "Hickory, dickory, dock."
+      ],
+      "moralOrTheme": "Learning about time"
+    },
+    {
+      "id": "c1_r5",
+      "title": "Humpty Dumpty",
+      "author": "Traditional",
+      "stanzas": [
+        "Humpty Dumpty sat on a wall,",
+        "Humpty Dumpty had a great fall.",
+        "All the king's horses and all the king's men,",
+        "Couldn't put Humpty together again."
+      ],
+      "moralOrTheme": "Caution and safety"
+    },
+    {
+      "id": "c1_r6",
+      "title": "Jack and Jill",
+      "author": "Traditional",
+      "stanzas": [
+        "Jack and Jill went up the hill,",
+        "To fetch a pail of water.",
+        "Jack fell down and broke his crown,",
+        "And Jill came tumbling after."
+      ],
+      "moralOrTheme": "Teamwork and resilience"
+    },
+    {
+      "id": "c1_r7",
+      "title": "Little Miss Muffet",
+      "author": "Traditional",
+      "stanzas": [
+        "Little Miss Muffet sat on a tuffet,",
+        "Eating her curds and whey.",
+        "Along came a spider, who sat down beside her,",
+        "And frightened Miss Muffet away."
+      ],
+      "moralOrTheme": "Overcoming silly fears"
+    },
+    {
+      "id": "c1_r8",
+      "title": "Mary Had a Little Lamb",
+      "author": "Sarah Josepha Hale",
+      "stanzas": [
+        "Mary had a little lamb,",
+        "Its fleece was white as snow.",
+        "And everywhere that Mary went,",
+        "The lamb was sure to go."
+      ],
+      "moralOrTheme": "Gentle love for animals"
+    },
+    {
+      "id": "c1_r9",
+      "title": "The Wheels on the Bus",
+      "author": "Verna Hills",
+      "stanzas": [
+        "The wheels on the bus go round and round,",
+        "Round and round, round and round.",
+        "The wheels on the bus go round and round,",
+        "All through the town."
+      ],
+      "moralOrTheme": "Community transport"
+    },
+    {
+      "id": "c1_r10",
+      "title": "Incy Wincy Spider",
+      "author": "Traditional",
+      "stanzas": [
+        "The incy wincy spider climbed up the water spout.",
+        "Down came the rain and washed the spider out.",
+        "Out came the sunshine and dried up all the rain,",
+        "And the incy wincy spider climbed up the spout again."
+      ],
+      "moralOrTheme": "Persistence through rain"
+    },
+    {
+      "id": "c1_r11",
+      "title": "Row Row Row Your Boat",
+      "author": "Traditional",
+      "stanzas": [
+        "Row, row, row your boat,",
+        "Gently down the stream.",
+        "Merrily, merrily, merrily, merrily,",
+        "Life is but a dream."
+      ],
+      "moralOrTheme": "Cheerfulness in life"
+    },
+    {
+      "id": "c1_r12",
+      "title": "Hey Diddle Diddle",
+      "author": "Traditional",
+      "stanzas": [
+        "Hey diddle diddle, the cat and the fiddle,",
+        "The cow jumped over the moon.",
+        "The little dog laughed to see such fun,",
+        "And the dish ran away with the spoon."
+      ],
+      "moralOrTheme": "Playful fun and rhyming"
+    },
+    {
+      "id": "c1_r13",
+      "title": "One Two Buckle My Shoe",
+      "author": "Traditional",
+      "stanzas": [
+        "One, two, buckle my shoe;",
+        "Three, four, shut the door;",
+        "Five, six, pick up sticks;",
+        "Seven, eight, lay them straight;"
+      ],
+      "moralOrTheme": "Counting with rhymes"
+    },
+    {
+      "id": "c1_r14",
+      "title": "Hot Cross Buns",
+      "author": "Traditional",
+      "stanzas": [
+        "Hot cross buns! Hot cross buns!",
+        "One a penny, two a penny,",
+        "Hot cross buns!",
+        "If you have no daughters, give them to your sons!"
+      ],
+      "moralOrTheme": "Warmth of sharing meals"
+    },
+    {
+      "id": "c1_r15",
+      "title": "Ring a Ring o Roses",
+      "author": "Traditional",
+      "stanzas": [
+        "Ring-a-ring-o' roses,",
+        "A pocket full of posies.",
+        "A-tishoo! A-tishoo!",
+        "We all fall down!"
+      ],
+      "moralOrTheme": "Playful outdoor dancing"
+    },
+    {
+      "id": "c1_r16",
+      "title": "London Bridge is Falling Down",
+      "author": "Traditional",
+      "stanzas": [
+        "London Bridge is falling down,",
+        "Falling down, falling down.",
+        "London Bridge is falling down,",
+        "My fair lady."
+      ],
+      "moralOrTheme": "Historic structures"
+    },
+    {
+      "id": "c1_r17",
+      "title": "Five Little Monkeys",
+      "author": "Traditional",
+      "stanzas": [
+        "Five little monkeys jumping on the bed,",
+        "One fell off and bumped his head.",
+        "Mama called the doctor and the doctor said,",
+        "No more monkeys jumping on the bed!"
+      ],
+      "moralOrTheme": "Safety while playing indoors"
+    },
+    {
+      "id": "c1_r18",
+      "title": "Three Blind Mice",
+      "author": "Thomas Ravenscroft",
+      "stanzas": [
+        "Three blind mice, three blind mice,",
+        "See how they run, see how they run!",
+        "They all ran after the farmer's wife,",
+        "Who cut off their tails with a carving knife."
+      ],
+      "moralOrTheme": "Observation in nature"
+    },
+    {
+      "id": "c1_r19",
+      "title": "Ding Dong Bell",
+      "author": "Traditional",
+      "stanzas": [
+        "Ding, dong, bell, Pussy's in the well.",
+        "Who put her in? Little Tommy Thin.",
+        "Who pulled her out? Little Tommy Stout.",
+        "What a naughty boy was that, to try to drown poor pussy cat!"
+      ],
+      "moralOrTheme": "Caring for pets"
+    },
+    {
+      "id": "c1_r20",
+      "title": "Pat a Cake",
+      "author": "Traditional",
+      "stanzas": [
+        "Pat-a-cake, pat-a-cake, baker's man,",
+        "Bake me a cake as fast as you can;",
+        "Pat it and prick it, and mark it with B,",
+        "And put it in the oven for baby and me."
+      ],
+      "moralOrTheme": "Kitchen baking fun"
+    },
+    {
+      "id": "c1_r21",
+      "title": "This Little Piggy",
+      "author": "Traditional",
+      "stanzas": [
+        "This little piggy went to market,",
+        "This little piggy stayed home,",
+        "This little piggy had roast beef,",
+        "This little piggy had none,",
+        "And this little piggy cried wee wee wee all the way home."
+      ],
+      "moralOrTheme": "Counting toes"
+    },
+    {
+      "id": "c1_r22",
+      "title": "Rain Rain Go Away",
+      "author": "Traditional",
+      "stanzas": [
+        "Rain, rain, go away,",
+        "Come again another day.",
+        "Little children want to play,",
+        "Rain, rain, go away!"
+      ],
+      "moralOrTheme": "Joy of playing outside"
+    },
+    {
+      "id": "c1_r23",
+      "title": "Simple Simon",
+      "author": "Traditional",
+      "stanzas": [
+        "Simple Simon met a pieman, going to the fair;",
+        "Said Simple Simon to the pieman, let me taste your ware.",
+        "Said the pieman to Simple Simon, show me first your penny;",
+        "Said Simple Simon to the pieman, indeed I have not any."
+      ],
+      "moralOrTheme": "Learning about commerce"
+    },
+    {
+      "id": "c1_r24",
+      "title": "Polly Put the Kettle On",
+      "author": "Traditional",
+      "stanzas": [
+        "Polly put the kettle on,",
+        "Polly put the kettle on,",
+        "Polly put the kettle on,",
+        "We'll all have tea."
+      ],
+      "moralOrTheme": "Tea time hospitality"
+    },
+    {
+      "id": "c1_r25",
+      "title": "Little Bo Peep",
+      "author": "Traditional",
+      "stanzas": [
+        "Little Bo-Peep has lost her sheep,",
+        "And cannot tell where to find them;",
+        "Leave them alone, and they'll come home,",
+        "Bringing their tails behind them."
+      ],
+      "moralOrTheme": "Patience in caring for animals"
+    },
+    {
+      "id": "c1_r26",
+      "title": "Rock a Bye Baby",
+      "author": "Traditional",
+      "stanzas": [
+        "Rock-a-bye baby, on the tree top,",
+        "When the wind blows, the cradle will rock.",
+        "When the bough breaks, the cradle will fall,",
+        "And down will come baby, cradle and all."
+      ],
+      "moralOrTheme": "Soothing lullaby"
+    },
+    {
+      "id": "c1_r27",
+      "title": "It is Raining It is Pouring",
+      "author": "Traditional",
+      "stanzas": [
+        "It's raining, it's pouring,",
+        "The old man is snoring.",
+        "He bumped his head when he went to bed,",
+        "And couldn't get up in the morning."
+      ],
+      "moralOrTheme": "Rainy morning cozy sleep"
+    },
+    {
+      "id": "c1_r28",
+      "title": "Sing a Song of Sixpence",
+      "author": "Traditional",
+      "stanzas": [
+        "Sing a song of sixpence, a pocket full of rye;",
+        "Four and twenty blackbirds, baked in a pie.",
+        "When the pie was opened, the birds began to sing;",
+        "Was not that a dainty dish, to set before the king?"
+      ],
+      "moralOrTheme": "Royal celebration rhyme"
+    },
+    {
+      "id": "c1_r29",
+      "title": "Peter Peter Pumpkin Eater",
+      "author": "Traditional",
+      "stanzas": [
+        "Peter, Peter, pumpkin eater,",
+        "Had a wife and couldn't keep her.",
+        "He put her in a pumpkin shell,",
+        "And there he kept her very well."
+      ],
+      "moralOrTheme": "Whimsical nursery folklore"
+    },
+    {
+      "id": "c1_r30",
+      "title": "Goosey Goosey Gander",
+      "author": "Traditional",
+      "stanzas": [
+        "Goosey goosey gander, whither shall I wander?",
+        "Upstairs and downstairs and in my lady's chamber.",
+        "There I met an old man who wouldn't say his prayers,",
+        "I took him by the left leg and threw him down the stairs."
+      ],
+      "moralOrTheme": "Classic nursery cadence"
+    },
+    {
+      "id": "c1_r31",
+      "title": "Georgie Porgie",
+      "author": "Traditional",
+      "stanzas": [
+        "Georgie Porgie, pudding and pie,",
+        "Kissed the girls and made them cry.",
+        "When the boys came out to play,",
+        "Georgie Porgie ran away."
+      ],
+      "moralOrTheme": "Respecting personal space"
+    },
+    {
+      "id": "c1_r32",
+      "title": "Wee Willie Winkie",
+      "author": "William Miller",
+      "stanzas": [
+        "Wee Willie Winkie runs through the town,",
+        "Upstairs and downstairs in his nightgown,",
+        "Rapping at the window, crying through the lock,",
+        "Are the children in their beds, for now it's eight o'clock?"
+      ],
+      "moralOrTheme": "Bedtime routine"
+    },
+    {
+      "id": "c1_r33",
+      "title": "Rub a Dub Dub",
+      "author": "Traditional",
+      "stanzas": [
+        "Rub-a-dub-dub, three men in a tub,",
+        "And who do you think they be?",
+        "The butcher, the baker, the candlestick-maker,",
+        "And all of them gone to sea."
+      ],
+      "moralOrTheme": "Different professions"
+    },
+    {
+      "id": "c1_r34",
+      "title": "Ten Little Monkeys",
+      "author": "Traditional",
+      "stanzas": [
+        "Ten little monkeys jumping in the sun,",
+        "Along came an elephant having lots of fun.",
+        "One monkey leaped upon the jumbo gray,",
+        "And nine little monkeys were shouting hurray!"
+      ],
+      "moralOrTheme": "Joyful counting"
+    },
+    {
+      "id": "c1_r35",
+      "title": "Old MacDonald Had a Farm",
+      "author": "Traditional",
+      "stanzas": [
+        "Old MacDonald had a farm, E-I-E-I-O!",
+        "And on that farm he had a cow, E-I-E-I-O!",
+        "With a moo-moo here, and a moo-moo there,",
+        "Everywhere a moo-moo!"
+      ],
+      "moralOrTheme": "Animal farm sounds"
+    }
+  ],
+  "Class 2": [
+    {
+      "id": "c2_r1",
+      "title": "Early to Bed",
+      "author": "Traditional",
+      "stanzas": [
+        "Early to bed and early to rise,",
+        "Makes a child healthy, wealthy, and wise!"
+      ],
+      "moralOrTheme": "Good morning habits"
+    },
+    {
+      "id": "c2_r2",
+      "title": "The Moon",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "The moon has a face like the clock in the hall;",
+        "She shines on thieves on the garden wall,",
+        "On streets and fields and harbour quays,",
+        "And birdies asleep in the forks of the trees."
+      ],
+      "moralOrTheme": "Nighttime wonder"
+    },
+    {
+      "id": "c2_r3",
+      "title": "At the Seaside",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "When I was down beside the sea",
+        "A wooden spade they gave to me",
+        "To dig the sandy shore.",
+        "My holes were empty like a cup,",
+        "In every hole the sea came up,",
+        "Till it could come no more."
+      ],
+      "moralOrTheme": "Discovery at ocean shore"
+    },
+    {
+      "id": "c2_r4",
+      "title": "Bed in Summer",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "In winter I get up at night",
+        "And dress by yellow candle-light.",
+        "In summer, quite the other way,",
+        "I have to go to bed by day."
+      ],
+      "moralOrTheme": "Seasons and daytime"
+    },
+    {
+      "id": "c2_r5",
+      "title": "My Shadow",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "I have a little shadow that goes in and out with me,",
+        "And what can be the use of him is more than I can see.",
+        "He is very, very like me from the heels up to the head;",
+        "And I see him jump before me, when I jump into my bed."
+      ],
+      "moralOrTheme": "Childhood imagination and light"
+    },
+    {
+      "id": "c2_r6",
+      "title": "The Swing",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "How do you like to go up in a swing,",
+        "Up in the air so blue?",
+        "Oh, I do think it the pleasantest thing",
+        "Ever a child can do!"
+      ],
+      "moralOrTheme": "Pure joy of outdoor play"
+    },
+    {
+      "id": "c2_r7",
+      "title": "Windy Nights",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "Whenever the moon and stars are set,",
+        "Whenever the wind is high,",
+        "All night long in the dark and wet,",
+        "A man goes riding by."
+      ],
+      "moralOrTheme": "Mystery of night winds"
+    },
+    {
+      "id": "c2_r8",
+      "title": "The Cow",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "The friendly cow all red and white,",
+        "I love with all my heart:",
+        "She gives me cream with all her might,",
+        "To eat with apple-tart."
+      ],
+      "moralOrTheme": "Gratitude for farm animals"
+    },
+    {
+      "id": "c2_r9",
+      "title": "Where Go the Boats?",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "Dark brown is the river,",
+        "Golden is the sand.",
+        "It flows along for ever,",
+        "With trees on either hand."
+      ],
+      "moralOrTheme": "Journey of water and life"
+    },
+    {
+      "id": "c2_r10",
+      "title": "Time to Rise",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "A birdie with a yellow bill",
+        "Hopped upon the window sill,",
+        "Cocked his shining eye and said:",
+        "Ain't you 'shamed, you sleepy-head?"
+      ],
+      "moralOrTheme": "Waking up with birds"
+    },
+    {
+      "id": "c2_r11",
+      "title": "Rain",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "The rain is raining all around,",
+        "It falls on field and tree,",
+        "It rains on the umbrellas here,",
+        "And on the ships at sea."
+      ],
+      "moralOrTheme": "Rain touches everything"
+    },
+    {
+      "id": "c2_r12",
+      "title": "Singing",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "Of speckled eggs the birdie sings",
+        "And nests among the trees;",
+        "The sailor sings of ropes and things",
+        "In ships upon the seas."
+      ],
+      "moralOrTheme": "Music in all life"
+    },
+    {
+      "id": "c2_r13",
+      "title": "Autumn Fires",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "In the other gardens",
+        "And all up the vale,",
+        "From the autumn bonfires",
+        "See the smoke trail!"
+      ],
+      "moralOrTheme": "Beauty of autumn season"
+    },
+    {
+      "id": "c2_r14",
+      "title": "Marching Song",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "Bring the comb and play upon it!",
+        "Marching, here we come!",
+        "Willie cocks his highland bonnet,",
+        "Johnnie beats the drum."
+      ],
+      "moralOrTheme": "Cooperation and rhythm"
+    },
+    {
+      "id": "c2_r15",
+      "title": "The Land of Story-Books",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "At evening when the lamp is lit,",
+        "Around the fire my parents sit;",
+        "They sit at home and talk and sing,",
+        "And do not play at anything."
+      ],
+      "moralOrTheme": "Magic world of reading books"
+    },
+    {
+      "id": "c2_r16",
+      "title": "Block City",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "What are you able to build with your blocks?",
+        "Castles and palaces, temples and docks.",
+        "Rain may keep raining, and others go roam,",
+        "But I can be happy and building at home."
+      ],
+      "moralOrTheme": "Creative building at home"
+    },
+    {
+      "id": "c2_r17",
+      "title": "The Sun",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "Great is the sun, and wide he goes",
+        "Through empty heaven without repose;",
+        "And in the blue and glowing days",
+        "More thick than rain he showers his rays."
+      ],
+      "moralOrTheme": "Sunlight energizing life"
+    },
+    {
+      "id": "c2_r18",
+      "title": "The Little Land",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "When at home I sit and read",
+        "A childish book in fairy need,",
+        "O then I see the little land",
+        "As plain as on my open hand."
+      ],
+      "moralOrTheme": "Imagination through reading"
+    },
+    {
+      "id": "c2_r19",
+      "title": "Night and Day",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "When the golden day is done,",
+        "Through the closing of the sun,",
+        "Night comes on with starry gaze,",
+        "Sleep shall bless our quiet days."
+      ],
+      "moralOrTheme": "Harmony of day and night"
+    },
+    {
+      "id": "c2_r20",
+      "title": "The Wind",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "I saw you toss the kites on high",
+        "And blow the birds about the sky;",
+        "And all around I heard you pass,",
+        "Like ladies' skirts across the grass."
+      ],
+      "moralOrTheme": "Invisible power of wind"
+    },
+    {
+      "id": "c2_r21",
+      "title": "Foreign Children",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "Little Indian, Sioux or Crow,",
+        "Little frosty Eskimo,",
+        "Little Turk or Japanee,",
+        "O! Don't you wish that you were me?"
+      ],
+      "moralOrTheme": "Friendship across all lands"
+    },
+    {
+      "id": "c2_r22",
+      "title": "The Lamplighter",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "My tea is nearly ready and the sun has left the sky.",
+        "It's time to take the window to see Leerie going by;",
+        "For every night at teatime and before you take your seat,",
+        "With lantern and with ladder he comes posting up the street."
+      ],
+      "moralOrTheme": "Appreciation of evening work"
+    },
+    {
+      "id": "c2_r23",
+      "title": "Escape at Bedtime",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "The lights from the parlour and kitchen shone out",
+        "Through the blinds and the windows and bars;",
+        "And high overhead after all of the shout,",
+        "The sky was all full of the stars."
+      ],
+      "moralOrTheme": "Quiet majesty of night stars"
+    },
+    {
+      "id": "c2_r24",
+      "title": "Farewell to the Farm",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "The coach is at the door at last;",
+        "The eager children, mounting fast",
+        "And kissing hands, in chorus sing:",
+        "Good-bye, good-bye, to everything!"
+      ],
+      "moralOrTheme": "Fond childhood holiday memories"
+    },
+    {
+      "id": "c2_r25",
+      "title": "Looking Forward",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "When I am grown to man's estate",
+        "I shall be very proud and great,",
+        "And tell the other girls and boys",
+        "Not to meddle with my toys."
+      ],
+      "moralOrTheme": "Humor in growing up"
+    },
+    {
+      "id": "c2_r26",
+      "title": "Happy Thought",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "The world is so full of a number of things,",
+        "I'm sure we should all be as happy as kings."
+      ],
+      "moralOrTheme": "Gratitude for worldly wonders"
+    },
+    {
+      "id": "c2_r27",
+      "title": "A Good Play",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "We built a ship upon the stairs",
+        "All made of the back-bedroom chairs,",
+        "And filled it full of sofa pillows",
+        "To go a-sailing on the billows."
+      ],
+      "moralOrTheme": "Indoor imaginary adventures"
+    },
+    {
+      "id": "c2_r28",
+      "title": "Pirate Story",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "Three of us afloat in the meadow by the swing,",
+        "Three of us aboard in the basket on the lea.",
+        "Winds are in the air, they are blowing in the spring,",
+        "And forty miles around us is the roaring of the sea."
+      ],
+      "moralOrTheme": "Joy of shared playtime"
+    },
+    {
+      "id": "c2_r29",
+      "title": "Young Night Thought",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "All night long and every night,",
+        "When my mama puts out the light,",
+        "I see the people marching by,",
+        "As plain as day before my eye."
+      ],
+      "moralOrTheme": "Vivid childhood dreams"
+    },
+    {
+      "id": "c2_r30",
+      "title": "System",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "Every night my prayers I say,",
+        "And get my dinner every day;",
+        "And every day that I've been good,",
+        "I get an orange after food."
+      ],
+      "moralOrTheme": "Good manners and routine"
+    },
+    {
+      "id": "c2_r31",
+      "title": "Whole Duty of Children",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "A child should always say what's true",
+        "And speak when he is spoken to,",
+        "And behave mannerly at table;",
+        "At least as far as he is able."
+      ],
+      "moralOrTheme": "Politeness and truthfulness"
+    },
+    {
+      "id": "c2_r32",
+      "title": "Foreign Lands",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "Up into the cherry tree",
+        "Who should climb but little me?",
+        "I held the trunk with both my hands",
+        "And looked abroad on foreign lands."
+      ],
+      "moralOrTheme": "Viewing the world from high"
+    },
+    {
+      "id": "c2_r33",
+      "title": "The Flowers",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "All the names I know from nurse:",
+        "Gardener's garters, Shepherd's purse,",
+        "Bachelor's buttons, Lady's smock,",
+        "And the blossoming Midsummer clock."
+      ],
+      "moralOrTheme": "Learning botanical names"
+    },
+    {
+      "id": "c2_r34",
+      "title": "Summer Sun",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "Great is the sun, and wide he goes",
+        "Through empty heaven without repose;",
+        "Above the hills, across the plain,",
+        "He shines on every roof and lane."
+      ],
+      "moralOrTheme": "Sunlight touching nature"
+    },
+    {
+      "id": "c2_r35",
+      "title": "My Kingdom",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "Down by a shining water well",
+        "I found a very little dell,",
+        "No higher than my head.",
+        "The waters murmured softly by,",
+        "Beneath the pleasant summer sky."
+      ],
+      "moralOrTheme": "Finding peace in quiet nature"
+    }
+  ],
+  "Class 3": [
+    {
+      "id": "c3_r1",
+      "title": "The Balloon Man",
+      "author": "Rose Fyleman",
+      "stanzas": [
+        "He always comes on market days,",
+        "And holds balloons \u2014 a lovely bunch \u2014",
+        "And in the market square he stays,",
+        "And never seems to think of lunch."
+      ],
+      "moralOrTheme": "Delight of colors and joy"
+    },
+    {
+      "id": "c3_r2",
+      "title": "Trains",
+      "author": "James S. Tippett",
+      "stanzas": [
+        "Over the mountains, over the plains,",
+        "Over the rivers, here come the trains!",
+        "Carrying passengers, carrying mail,",
+        "Bringing their precious loads in without fail."
+      ],
+      "moralOrTheme": "How railways unite a country"
+    },
+    {
+      "id": "c3_r3",
+      "title": "Puppy and I",
+      "author": "A. A. Milne",
+      "stanzas": [
+        "I met a man as I went walking;",
+        "We got talking, Man and I.",
+        "'Where are you going to, Man?' I said",
+        "'I'm going to the village to get some bread.'"
+      ],
+      "moralOrTheme": "Joy of companion animals"
+    },
+    {
+      "id": "c3_r4",
+      "title": "Little by Little",
+      "author": "Anonymous",
+      "stanzas": [
+        "'Little by little,' an acorn said,",
+        "As it slowly sank in its mossy bed,",
+        "'I am improving every day,",
+        "Hidden deep in the earth away.'"
+      ],
+      "moralOrTheme": "Steady growth leads to greatness"
+    },
+    {
+      "id": "c3_r5",
+      "title": "Sea Song",
+      "author": "Anonymous",
+      "stanzas": [
+        "I found a shell, a curly one,",
+        "Lying on the sand,",
+        "I picked it up and took it home,",
+        "Cold in my little hand."
+      ],
+      "moralOrTheme": "Ocean treasures"
+    },
+    {
+      "id": "c3_r6",
+      "title": "Bird Talk",
+      "author": "Aileen Fisher",
+      "stanzas": [
+        "'Think...' said the robin,",
+        "'Think...' said the jay,",
+        "Sitting in the garden,",
+        "Talking one day.",
+        "'Think about people \u2014 the way they grow:'",
+        "'They don't have feathers at all, you know.'"
+      ],
+      "moralOrTheme": "Different perspectives in nature"
+    },
+    {
+      "id": "c3_r7",
+      "title": "Good Morning",
+      "author": "Fannie R. Buchanan",
+      "stanzas": [
+        "Good morning, sky;",
+        "Good morning, sun;",
+        "Good morning, little winds that run!",
+        "Good morning, birds;",
+        "Good morning, trees;",
+        "And creeping grass, and brownie bees!"
+      ],
+      "moralOrTheme": "Greeting nature with joy"
+    },
+    {
+      "id": "c3_r8",
+      "title": "What is in the Mailbox?",
+      "author": "Anonymous",
+      "stanzas": [
+        "Most always, when the postman comes",
+        "With letters, two or three,",
+        "They're for my Mother or my Dad",
+        "But never one for me."
+      ],
+      "moralOrTheme": "Value of handwritten letters"
+    },
+    {
+      "id": "c3_r9",
+      "title": "Don't Give Up",
+      "author": "Phoebe Cary",
+      "stanzas": [
+        "If you've tried and have not won,",
+        "Never stop for crying;",
+        "All that's great and good is done",
+        "Just by patient trying."
+      ],
+      "moralOrTheme": "Perseverance in learning"
+    },
+    {
+      "id": "c3_r10",
+      "title": "The Star",
+      "author": "Jane Taylor",
+      "stanzas": [
+        "Twinkle, twinkle, little star,",
+        "How I wonder what you are!",
+        "Up above the world so high,",
+        "Like a diamond in the sky."
+      ],
+      "moralOrTheme": "Wonder of the night sky"
+    },
+    {
+      "id": "c3_r11",
+      "title": "Who Has Seen the Wind?",
+      "author": "Christina Rossetti",
+      "stanzas": [
+        "Who has seen the wind?",
+        "Neither I nor you:",
+        "But when the leaves hang trembling,",
+        "The wind is passing through."
+      ],
+      "moralOrTheme": "Invisible forces of nature"
+    },
+    {
+      "id": "c3_r12",
+      "title": "Clouds",
+      "author": "Christina Rossetti",
+      "stanzas": [
+        "White sheep, white sheep,",
+        "On a blue hill,",
+        "When the wind stops,",
+        "You all stand still."
+      ],
+      "moralOrTheme": "Metaphor and weather clouds"
+    },
+    {
+      "id": "c3_r13",
+      "title": "The Caterpillar",
+      "author": "Christina Rossetti",
+      "stanzas": [
+        "Brown and furry",
+        "Caterpillar in a hurry,",
+        "Take your walk",
+        "To the shady leaf, or stalk."
+      ],
+      "moralOrTheme": "Metamorphosis and small bugs"
+    },
+    {
+      "id": "c3_r14",
+      "title": "The Rainbow",
+      "author": "Christina Rossetti",
+      "stanzas": [
+        "Boats sail on the rivers,",
+        "And ships sail on the seas;",
+        "But clouds that sail across the sky",
+        "Are prettier than these."
+      ],
+      "moralOrTheme": "Natural beauty over man-made"
+    },
+    {
+      "id": "c3_r15",
+      "title": "What is Pink?",
+      "author": "Christina Rossetti",
+      "stanzas": [
+        "What is pink? a rose is pink",
+        "By a fountain's brink.",
+        "What is red? a poppy's red",
+        "In its barley bed."
+      ],
+      "moralOrTheme": "Colors in blooming nature"
+    },
+    {
+      "id": "c3_r16",
+      "title": "The City Mouse and the Garden Mouse",
+      "author": "Christina Rossetti",
+      "stanzas": [
+        "The city mouse lives in a house;\u2014",
+        "The garden mouse lives in a bower,",
+        "He's friendly with the frogs and toads,",
+        "And sees the pretty garden flower."
+      ],
+      "moralOrTheme": "Simplicity of rural living"
+    },
+    {
+      "id": "c3_r17",
+      "title": "Hurt No Living Thing",
+      "author": "Christina Rossetti",
+      "stanzas": [
+        "Hurt no living thing:",
+        "Ladybird, nor butterfly,",
+        "Nor moth with dusty wing,",
+        "Nor cricket chirping cheerily."
+      ],
+      "moralOrTheme": "Ahimsa and compassion for all life"
+    },
+    {
+      "id": "c3_r18",
+      "title": "Flint",
+      "author": "Christina Rossetti",
+      "stanzas": [
+        "An emerald is as green as grass,",
+        "A ruby red as blood;",
+        "A sapphire shines as blue as heaven;",
+        "A flint lies in the mud."
+      ],
+      "moralOrTheme": "Inner substance over surface sparkle"
+    },
+    {
+      "id": "c3_r19",
+      "title": "How Doth the Little Busy Bee",
+      "author": "Isaac Watts",
+      "stanzas": [
+        "How doth the little busy bee",
+        "Improve each shining hour,",
+        "And gather honey all the day",
+        "From every opening flower!"
+      ],
+      "moralOrTheme": "Hard work and diligence"
+    },
+    {
+      "id": "c3_r20",
+      "title": "The Owl and the Pussy-cat",
+      "author": "Edward Lear",
+      "stanzas": [
+        "The Owl and the Pussy-cat went to sea",
+        "In a beautiful pea-green boat,",
+        "They took some honey, and plenty of money,",
+        "Wrapped up in a five-pound note."
+      ],
+      "moralOrTheme": "Joyful nonsense rhyme"
+    },
+    {
+      "id": "c3_r21",
+      "title": "The Crocodile",
+      "author": "Lewis Carroll",
+      "stanzas": [
+        "How doth the little crocodile",
+        "Improve his shining tail,",
+        "And pour the waters of the Nile",
+        "On every golden scale!"
+      ],
+      "moralOrTheme": "Humor and warning of deceit"
+    },
+    {
+      "id": "c3_r22",
+      "title": "A Little Seed",
+      "author": "Mabel Watts",
+      "stanzas": [
+        "A little seed for me to sow,",
+        "A little earth to make it grow,",
+        "A little hole, a little pat,",
+        "A little wish, and that is that."
+      ],
+      "moralOrTheme": "Gardening care"
+    },
+    {
+      "id": "c3_r23",
+      "title": "Trees",
+      "author": "Joyce Kilmer",
+      "stanzas": [
+        "I think that I shall never see",
+        "A poem lovely as a tree.",
+        "A tree whose hungry mouth is prest",
+        "Against the earth's sweet flowing breast."
+      ],
+      "moralOrTheme": "Deep reverence for mother trees"
+    },
+    {
+      "id": "c3_r24",
+      "title": "The Squirrel",
+      "author": "Mildred Bowers Armstrong",
+      "stanzas": [
+        "He wore a question mark for tail,",
+        "An overcoat of gray,",
+        "He sat up straight to eat a nut.",
+        "He liked to tease and play."
+      ],
+      "moralOrTheme": "Playful forest animals"
+    },
+    {
+      "id": "c3_r25",
+      "title": "My Dog",
+      "author": "Emily Lewis",
+      "stanzas": [
+        "Have you seen a little dog anywhere about?",
+        "A bushy tail, and a funny little snout,",
+        "A little lead to pull him, and a little coat to wear,",
+        "And he answers to the name of Rover!"
+      ],
+      "moralOrTheme": "Bond with domestic pet"
+    },
+    {
+      "id": "c3_r26",
+      "title": "The Robin",
+      "author": "Laurence Alma-Tadema",
+      "stanzas": [
+        "When father takes his spade to dig",
+        "Then Robin comes along;",
+        "He sits upon a little twig",
+        "And sings a little song."
+      ],
+      "moralOrTheme": "Friendship between man and bird"
+    },
+    {
+      "id": "c3_r27",
+      "title": "The Moon",
+      "author": "Eliza Lee Follen",
+      "stanzas": [
+        "O, look at the moon!",
+        "She is shining up there;",
+        "O, mother, she looks",
+        "Like a lamp in the air."
+      ],
+      "moralOrTheme": "Mother and child night bond"
+    },
+    {
+      "id": "c3_r28",
+      "title": "Boats Sail on the Rivers",
+      "author": "Christina Rossetti",
+      "stanzas": [
+        "Boats sail on the rivers,",
+        "And ships sail on the seas;",
+        "But the rainbow that bridges heaven",
+        "Is prettiest far than these."
+      ],
+      "moralOrTheme": "Sky rainbow splendor"
+    },
+    {
+      "id": "c3_r29",
+      "title": "The Echoing Green",
+      "author": "William Blake",
+      "stanzas": [
+        "The sun does arise,",
+        "And make happy the skies;",
+        "The merry bells ring",
+        "To welcome the Spring."
+      ],
+      "moralOrTheme": "Joy of spring mornings"
+    },
+    {
+      "id": "c3_r30",
+      "title": "Spring",
+      "author": "William Blake",
+      "stanzas": [
+        "Sound the flute!",
+        "Now it's mute.",
+        "Birds delight",
+        "Day and night."
+      ],
+      "moralOrTheme": "Celebrating the blooming season"
+    },
+    {
+      "id": "c3_r31",
+      "title": "The Lamb",
+      "author": "William Blake",
+      "stanzas": [
+        "Little Lamb who made thee?",
+        "Dost thou know who made thee?",
+        "Gave thee life and bid thee feed,",
+        "By the stream and o'er the mead."
+      ],
+      "moralOrTheme": "Purity and innocence"
+    },
+    {
+      "id": "c3_r32",
+      "title": "Infant Joy",
+      "author": "William Blake",
+      "stanzas": [
+        "'I have no name,",
+        "I am but two days old.'",
+        "What shall I call thee?",
+        "'I happy am,",
+        "Joy is my name.'"
+      ],
+      "moralOrTheme": "Newborn happiness"
+    },
+    {
+      "id": "c3_r33",
+      "title": "Nurse's Song",
+      "author": "William Blake",
+      "stanzas": [
+        "When the voices of children are heard on the green",
+        "And laughing is heard on the hill,",
+        "My heart is at rest within my breast",
+        "And everything else is still."
+      ],
+      "moralOrTheme": "Peace in children playing"
+    },
+    {
+      "id": "c3_r34",
+      "title": "The Piper",
+      "author": "William Blake",
+      "stanzas": [
+        "Piping down the valleys wild,",
+        "Piping songs of pleasant glee,",
+        "On a cloud I saw a child,",
+        "And he laughing said to me: 'Pipe a song about a Lamb!'"
+      ],
+      "moralOrTheme": "Musical inspiration"
+    },
+    {
+      "id": "c3_r35",
+      "title": "A Child's Thought of God",
+      "author": "Elizabeth Barrett Browning",
+      "stanzas": [
+        "They say that God lives very high,",
+        "But if you look above the pines",
+        "You cannot see our God; and why?",
+        "And yet the bright sun always shines."
+      ],
+      "moralOrTheme": "Spiritual contemplation"
+    }
+  ],
+  "Class 4": [
+    {
+      "id": "c4_r1",
+      "title": "Wake Up!",
+      "author": "C. Fletcher",
+      "stanzas": [
+        "Wake up! Wake up!",
+        "It is a lovely day.",
+        "Oh! Please get up",
+        "And come and play.",
+        "The birds are singing in the trees,",
+        "And you can hear the buzzing bees."
+      ],
+      "moralOrTheme": "Embracing fresh dawn energy"
+    },
+    {
+      "id": "c4_r2",
+      "title": "Noses",
+      "author": "Aileen Fisher",
+      "stanzas": [
+        "I looked in the mirror and looked at my nose:",
+        "It's the funniest thing, the way it grows",
+        "Stuck right out where all of it shows",
+        "With two little holes where the breathing goes."
+      ],
+      "moralOrTheme": "Body positivity and self love"
+    },
+    {
+      "id": "c4_r3",
+      "title": "Run!",
+      "author": "Mary Daunt",
+      "stanzas": [
+        "Away from the city",
+        "And into the sun,",
+        "Out to the country,",
+        "Run! Run! Run!",
+        "Run in the raindrops!",
+        "Run 'neath the trees!"
+      ],
+      "moralOrTheme": "Healthy physical stamina and freedom"
+    },
+    {
+      "id": "c4_r4",
+      "title": "Why?",
+      "author": "Anonymous",
+      "stanzas": [
+        "I know a curious little boy",
+        "Who is always asking 'Why?'",
+        "Why this, why that, why then, why now?",
+        "Why not, why by-and-by?"
+      ],
+      "moralOrTheme": "Encouraging scientific questioning"
+    },
+    {
+      "id": "c4_r5",
+      "title": "Don't Be Afraid of the Dark",
+      "author": "Ruskin Bond",
+      "stanzas": [
+        "Don't be afraid of the dark, little one,",
+        "The earth must rest when the day is done.",
+        "The sun must be harsh, but moonlight\u2014never!",
+        "And stars will be shining for ever and ever."
+      ],
+      "moralOrTheme": "Reassurance and peace in darkness"
+    },
+    {
+      "id": "c4_r6",
+      "title": "Hiawatha",
+      "author": "Henry Wadsworth Longfellow",
+      "stanzas": [
+        "Then the little Hiawatha",
+        "Learned of every bird its language,",
+        "Learned their names and all their secrets,",
+        "How they built their nests in Summer."
+      ],
+      "moralOrTheme": "Living in harmony with nature"
+    },
+    {
+      "id": "c4_r7",
+      "title": "A Watering Rhyme",
+      "author": "Ellen Dwight",
+      "stanzas": [
+        "Early in the morning,",
+        "Or the evening hour,",
+        "Are the times to water",
+        "Every kind of flower.",
+        "Watering at noonday,",
+        "When the sun is high,",
+        "Doesn't help the flowers,",
+        "Only makes them die."
+      ],
+      "moralOrTheme": "Care and wisdom in gardening"
+    },
+    {
+      "id": "c4_r8",
+      "title": "Books",
+      "author": "Anonymous",
+      "stanzas": [
+        "Come in, come in! Said the library door;",
+        "I opened it wide and saw books galore!",
+        "Tall skinny books up high on the shelves;",
+        "Little fat books that stood by themselves."
+      ],
+      "moralOrTheme": "Libraries as gateway to wisdom"
+    },
+    {
+      "id": "c4_r9",
+      "title": "The Naughty Boy",
+      "author": "John Keats",
+      "stanzas": [
+        "There was a naughty boy,",
+        "And a naughty boy was he,",
+        "He ran away to Scotland",
+        "The people for to see;"
+      ],
+      "moralOrTheme": "Exploring far off lands"
+    },
+    {
+      "id": "c4_r10",
+      "title": "The Arrow and the Song",
+      "author": "Henry Wadsworth Longfellow",
+      "stanzas": [
+        "I shot an arrow into the air,",
+        "It fell to earth, I knew not where;",
+        "For, so swiftly it flew, the sight",
+        "Could not follow it in its flight."
+      ],
+      "moralOrTheme": "Our words and actions live on forever"
+    },
+    {
+      "id": "c4_r11",
+      "title": "The Village Blacksmith",
+      "author": "Henry Wadsworth Longfellow",
+      "stanzas": [
+        "Under a spreading chestnut-tree",
+        "The village smithy stands;",
+        "The smith, a mighty man is he,",
+        "With large and sinewy hands;"
+      ],
+      "moralOrTheme": "Honest hard work and integrity"
+    },
+    {
+      "id": "c4_r12",
+      "title": "Daybreak",
+      "author": "Henry Wadsworth Longfellow",
+      "stanzas": [
+        "A wind came up out of the sea,",
+        "And said, 'O mists, make room for me.'",
+        "It hailed the ships, and cried, 'Sail on,",
+        "Ye mariners, the night is gone.'"
+      ],
+      "moralOrTheme": "Optimism of a new day"
+    },
+    {
+      "id": "c4_r13",
+      "title": "A Psalm of Life",
+      "author": "Henry Wadsworth Longfellow",
+      "stanzas": [
+        "Tell me not, in mournful numbers,",
+        "Life is but an empty dream!",
+        "For the soul is dead that slumbers,",
+        "And things are not what they seem."
+      ],
+      "moralOrTheme": "Living an active, purposeful life"
+    },
+    {
+      "id": "c4_r14",
+      "title": "Paul Revere's Ride",
+      "author": "Henry Wadsworth Longfellow",
+      "stanzas": [
+        "Listen, my children, and you shall hear",
+        "Of the midnight ride of Paul Revere,",
+        "On the eighteenth of April, in Seventy-Five;",
+        "Hardly a man is now alive who remembers that famous day and year."
+      ],
+      "moralOrTheme": "Courage and patriotism"
+    },
+    {
+      "id": "c4_r15",
+      "title": "The Brook",
+      "author": "Alfred Lord Tennyson",
+      "stanzas": [
+        "I come from haunts of coot and hern,",
+        "I make a sudden sally,",
+        "And sparkle out among the fern,",
+        "To bicker down a valley."
+      ],
+      "moralOrTheme": "Life flows continuously like a river"
+    },
+    {
+      "id": "c4_r16",
+      "title": "The Eagle",
+      "author": "Alfred Lord Tennyson",
+      "stanzas": [
+        "He clasps the crag with crooked hands;",
+        "Close to the sun in lonely lands,",
+        "Ring'd with the azure world, he stands."
+      ],
+      "moralOrTheme": "Majesty and power in nature"
+    },
+    {
+      "id": "c4_r17",
+      "title": "Sweet and Low",
+      "author": "Alfred Lord Tennyson",
+      "stanzas": [
+        "Sweet and low, sweet and low,",
+        "Wind of the western sea,",
+        "Low, low, breathe and blow,",
+        "Wind of the western sea!"
+      ],
+      "moralOrTheme": "Tender mother lullaby"
+    },
+    {
+      "id": "c4_r18",
+      "title": "Ring Out, Wild Bells",
+      "author": "Alfred Lord Tennyson",
+      "stanzas": [
+        "Ring out, wild bells, to the wild sky,",
+        "The flying cloud, the frosty light:",
+        "The year is dying in the night;",
+        "Ring out, wild bells, and let him die."
+      ],
+      "moralOrTheme": "Welcoming new hopes and renewal"
+    },
+    {
+      "id": "c4_r19",
+      "title": "Where the Mind is Without Fear",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "Where the mind is without fear and the head is held high;",
+        "Where knowledge is free;",
+        "Where the world has not been broken up into fragments by narrow domestic walls;"
+      ],
+      "moralOrTheme": "Freedom of thought and unity"
+    },
+    {
+      "id": "c4_r20",
+      "title": "The Paper Boats",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "Day by day I float my paper boats one by one down the running stream.",
+        "In big black letters I write my name on them and the name of the village where I live."
+      ],
+      "moralOrTheme": "Childhood innocence and world connection"
+    },
+    {
+      "id": "c4_r21",
+      "title": "Baby's Way",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "If baby only wanted to, he could fly up to the sky this moment.",
+        "It is not for nothing that he does not leave us."
+      ],
+      "moralOrTheme": "Love that binds family together"
+    },
+    {
+      "id": "c4_r22",
+      "title": "The Flower-School",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "When storm-clouds rumble in the sky and June showers come down,",
+        "The moist east wind comes marching over the heath to blow its bagpipes among the bamboos."
+      ],
+      "moralOrTheme": "Nature mirrors children in school"
+    },
+    {
+      "id": "c4_r23",
+      "title": "Vocation",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "When the gong sounds ten in the morning and I walk to school by our lane,",
+        "Every day I meet the hawker crying, 'Bangles, crystal bangles!'"
+      ],
+      "moralOrTheme": "Yearning for outdoor freedom"
+    },
+    {
+      "id": "c4_r24",
+      "title": "Clouds and Waves",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "Mother, the folk who live up in the clouds call out to me\u2014",
+        "'We play from the time we wake till the day ends.'"
+      ],
+      "moralOrTheme": "Mother's presence outshines all adventures"
+    },
+    {
+      "id": "c4_r25",
+      "title": "Defiance",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "I run along the boundary of the field,",
+        "The wind blows my scarf away in joy,",
+        "I laugh aloud at the flying kite,",
+        "And dare the storm to catch me!"
+      ],
+      "moralOrTheme": "Fearlessness of youth"
+    },
+    {
+      "id": "c4_r26",
+      "title": "The Champa Flower",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "Supposing I became a champa flower, just for fun, and grew on a branch high up that tree,",
+        "And shook in the wind with laughter and danced upon the newly budded leaves, would you know me, mother?"
+      ],
+      "moralOrTheme": "Child's affectionate peek-a-boo with mother"
+    },
+    {
+      "id": "c4_r27",
+      "title": "Sympathy",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "If I were only a little puppy, not your baby, mother, dear,",
+        "Would you say 'No' to me if I tried to eat from your dish?"
+      ],
+      "moralOrTheme": "Unconditional motherly love"
+    },
+    {
+      "id": "c4_r28",
+      "title": "The First Jasmines",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "Ah, these jasmines, these white jasmines!",
+        "I seem to remember the first day when I filled my hands with these jasmines, these white jasmines."
+      ],
+      "moralOrTheme": "Nostalgia of childhood pure joys"
+    },
+    {
+      "id": "c4_r29",
+      "title": "The Banyan Tree",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "O you shaggy-headed banyan tree standing on the bank of the pond,",
+        "Have you forgotten the little child, like the birds that have nested in your branches and left them?"
+      ],
+      "moralOrTheme": "Ancient trees watching generations grow"
+    },
+    {
+      "id": "c4_r30",
+      "title": "Playthings",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "Child, how happy you are sitting in the dust, playing with a broken twig all the morning.",
+        "I smile at your play with that little bit of a broken twig."
+      ],
+      "moralOrTheme": "True joy lies in simple imagination"
+    },
+    {
+      "id": "c4_r31",
+      "title": "The Astronomer",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "I only said, 'When in the evening the round full moon gets entangled among the branches of that Kadam tree, couldn't somebody catch it?'",
+        "Dada laughed at me and said, 'Baby, you are the silliest child I have ever known.'"
+      ],
+      "moralOrTheme": "Childlike wonder vs dry adult logic"
+    },
+    {
+      "id": "c4_r32",
+      "title": "The Merchant",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "Imagine, mother, that you are to stay at home and I am to travel into strange lands.",
+        "Imagine that my boat is ready at the landing fully laden."
+      ],
+      "moralOrTheme": "Adventurous dreams of childhood"
+    },
+    {
+      "id": "c4_r33",
+      "title": "The Hero",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "Mother, let us imagine we are traveling, and passing through a strange and dangerous country.",
+        "You are riding in a palanquin and I am trotting by you on a red horse."
+      ],
+      "moralOrTheme": "Courage to protect our loved ones"
+    },
+    {
+      "id": "c4_r34",
+      "title": "My Song",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "This song of mine will wind its music around you, my child, like the fond arms of love.",
+        "This song of mine will touch your forehead like a kiss of blessing."
+      ],
+      "moralOrTheme": "A parent's blessing travels through time"
+    },
+    {
+      "id": "c4_r35",
+      "title": "The Gift",
+      "author": "Rabindranath Tagore",
+      "stanzas": [
+        "I want to give you something, my child, but I have only this little flower of sweet scent.",
+        "Keep it in your hand and let its fragrance bring you joy."
+      ],
+      "moralOrTheme": "Sincerity is the greatest gift"
+    }
+  ],
+  "Class 5": [
+    {
+      "id": "c5_r1",
+      "title": "Ice-Cream Man",
+      "author": "Rachel Field",
+      "stanzas": [
+        "When summer's in the city,",
+        "And brick's a blaze of heat,",
+        "The Ice-cream Man with his little cart",
+        "Goes trundling down the street."
+      ],
+      "moralOrTheme": "Simple joy of cold treats in summer"
+    },
+    {
+      "id": "c5_r2",
+      "title": "Wonderful Waste",
+      "author": "Traditional Story Poem",
+      "stanzas": [
+        "Once the Maharaja of Travancore ordered a grand feast.",
+        "In the afternoon before the feast, the Maharaja entered the kitchen",
+        "To survey the dishes that had been prepared for the feast."
+      ],
+      "moralOrTheme": "Resourcefulness and zero waste"
+    },
+    {
+      "id": "c5_r3",
+      "title": "Teamwork",
+      "author": "Jan Nigro",
+      "stanzas": [
+        "Teamwork, teamwork,",
+        "Together we can make our dream work.",
+        "Then we'll share the joy of what we've done,",
+        "Teamwork, everyone!"
+      ],
+      "moralOrTheme": "Synergy and collaborative success"
+    },
+    {
+      "id": "c5_r4",
+      "title": "Flying Together",
+      "author": "Aesop adapted",
+      "stanzas": [
+        "Deep in a forest stood a very tall tree.",
+        "Its leafy branches spread out like strong arms.",
+        "This tree was the home of a flock of wild geese."
+      ],
+      "moralOrTheme": "Listening to wise elder guidance"
+    },
+    {
+      "id": "c5_r5",
+      "title": "My Shadow",
+      "author": "Robert Louis Stevenson",
+      "stanzas": [
+        "I have a little shadow that goes in and out with me,",
+        "And what can be the use of him is more than I can see.",
+        "He is very, very like me from the heels up to the head;",
+        "And I see him jump before me, when I jump into my bed."
+      ],
+      "moralOrTheme": "Light, optics and curiosity"
+    },
+    {
+      "id": "c5_r6",
+      "title": "Crying",
+      "author": "Galway Kinnell",
+      "stanzas": [
+        "Crying only a little bit",
+        "Is no use. You must cry",
+        "Until your pillow is soaked!",
+        "Then you can jump in the shower",
+        "And splash-splash-splash!"
+      ],
+      "moralOrTheme": "Expressing emotions and bouncing back happy"
+    },
+    {
+      "id": "c5_r7",
+      "title": "The Lazy Frog",
+      "author": "Anonymous",
+      "stanzas": [
+        "Fred is a very lazy frog",
+        "Who lolls all day upon a log.",
+        "He always manages to shirk",
+        "Doing a single stroke of work."
+      ],
+      "moralOrTheme": "Dangers of procrastination and laziness"
+    },
+    {
+      "id": "c5_r8",
+      "title": "Class Discussion",
+      "author": "Gervase Phinn",
+      "stanzas": [
+        "'In the class discussion, Jane, you hardly said a word.",
+        "We all aired our opinions, but from you we barely heard.",
+        "You sat and stared in silence with the persons all around.",
+        "Now tell me, Jane, and please be plain, is there anything the matter?'"
+      ],
+      "moralOrTheme": "Respecting introverted thoughtful quiet children"
+    },
+    {
+      "id": "c5_r9",
+      "title": "Topsy-Turvy Land",
+      "author": "H. E. Wilkinson",
+      "stanzas": [
+        "The people walk upon their heads,",
+        "The sea is made of sand,",
+        "The children go to school by night,",
+        "In Topsy-Turvy Land."
+      ],
+      "moralOrTheme": "Creative thinking outside normal boxes"
+    },
+    {
+      "id": "c5_r10",
+      "title": "Nobody's Friend",
+      "author": "Enid Blyton",
+      "stanzas": [
+        "She had some sweets that she wouldn't share,",
+        "She had a book that she wouldn't lend,",
+        "She wouldn't let anyone play with her doll,",
+        "She's nobody's friend!"
+      ],
+      "moralOrTheme": "Sharing leads to true friendships"
+    },
+    {
+      "id": "c5_r11",
+      "title": "The Little Bully",
+      "author": "Enid Blyton",
+      "stanzas": [
+        "Once upon a time, not so very long ago, there was a small boy called Hari.",
+        "Although he wasn't very big, he was strong, and he loved to bully."
+      ],
+      "moralOrTheme": "Kindness triumphs over bullying"
+    },
+    {
+      "id": "c5_r12",
+      "title": "Sing a Song of People",
+      "author": "Lois Lenski",
+      "stanzas": [
+        "Sing a song of people",
+        "Walking fast or slow;",
+        "People in the city,",
+        "Up and down they go.",
+        "People on the sidewalk,",
+        "People on the bus;"
+      ],
+      "moralOrTheme": "Energy and diversity of urban cities"
+    },
+    {
+      "id": "c5_r13",
+      "title": "Malu Bhalu",
+      "author": "Kamla Bhasin",
+      "stanzas": [
+        "High up in an icy lair",
+        "Lived a little polar bear",
+        "Snow white, snow bright was her mane,",
+        "Malu Bhalu was her name."
+      ],
+      "moralOrTheme": "Bravery and learning life skills"
+    },
+    {
+      "id": "c5_r14",
+      "title": "Who Will Be Ningthou?",
+      "author": "Indira Mukherjee",
+      "stanzas": [
+        "A Ningthou is a king in Manipur.",
+        "The people loved their King and Queen dearly.",
+        "They ruled wisely and brought peace to all humans, birds, and animals."
+      ],
+      "moralOrTheme": "Qualities of true righteous leadership"
+    },
+    {
+      "id": "c5_r15",
+      "title": "Daffodils",
+      "author": "William Wordsworth",
+      "stanzas": [
+        "I wandered lonely as a cloud",
+        "That floats on high o'er vales and hills,",
+        "When all at once I saw a crowd,",
+        "A host, of golden daffodils;"
+      ],
+      "moralOrTheme": "Healing power of nature on human mind"
+    },
+    {
+      "id": "c5_r16",
+      "title": "The Solitary Reaper",
+      "author": "William Wordsworth",
+      "stanzas": [
+        "Behold her, single in the field,",
+        "Yon solitary Highland Lass!",
+        "Reaping and singing by herself;",
+        "Stop here, or gently pass!"
+      ],
+      "moralOrTheme": "Melody of folk music in human hearts"
+    },
+    {
+      "id": "c5_r17",
+      "title": "My Heart Leaps Up",
+      "author": "William Wordsworth",
+      "stanzas": [
+        "My heart leaps up when I behold",
+        "A rainbow in the sky:",
+        "So was it when my life began;",
+        "So is it now I am a man;"
+      ],
+      "moralOrTheme": "Preserving child-like wonder forever"
+    },
+    {
+      "id": "c5_r18",
+      "title": "Stopping by Woods on a Snowy Evening",
+      "author": "Robert Frost",
+      "stanzas": [
+        "Whose woods these are I think I know.",
+        "His house is in the village though;",
+        "He will not see me stopping here",
+        "To watch his woods fill up with snow."
+      ],
+      "moralOrTheme": "Fulfilling duties before resting"
+    },
+    {
+      "id": "c5_r19",
+      "title": "The Road Not Taken",
+      "author": "Robert Frost",
+      "stanzas": [
+        "Two roads diverged in a yellow wood,",
+        "And sorry I could not travel both",
+        "And be one traveler, long I stood",
+        "And looked down one as far as I could"
+      ],
+      "moralOrTheme": "Making thoughtful independent life choices"
+    },
+    {
+      "id": "c5_r20",
+      "title": "Fire and Ice",
+      "author": "Robert Frost",
+      "stanzas": [
+        "Some say the world will end in fire,",
+        "Some say in ice.",
+        "From what I've tasted of desire",
+        "I hold with those who favor fire."
+      ],
+      "moralOrTheme": "Self-restraint and wisdom"
+    },
+    {
+      "id": "c5_r21",
+      "title": "Mending Wall",
+      "author": "Robert Frost",
+      "stanzas": [
+        "Something there is that doesn't love a wall,",
+        "That sends the frozen-ground-swell under it,",
+        "And spills the upper boulders in the sun;",
+        "And makes gaps even two can pass abreast."
+      ],
+      "moralOrTheme": "Questioning artificial barriers between neighbors"
+    },
+    {
+      "id": "c5_r22",
+      "title": "If",
+      "author": "Rudyard Kipling",
+      "stanzas": [
+        "If you can keep your head when all about you",
+        "Are losing theirs and blaming it on you,",
+        "If you can trust yourself when all men doubt you,",
+        "But make allowance for their doubting too;"
+      ],
+      "moralOrTheme": "Maturity, patience, and character"
+    },
+    {
+      "id": "c5_r23",
+      "title": "Abou Ben Adhem",
+      "author": "Leigh Hunt",
+      "stanzas": [
+        "Abou Ben Adhem (may his tribe increase!)",
+        "Awoke one night from a deep dream of peace,",
+        "And saw, within the moonlight in his room,",
+        "Making it rich, and like a lily in bloom, An angel writing in a book of gold."
+      ],
+      "moralOrTheme": "Serving fellow human beings is highest worship"
+    },
+    {
+      "id": "c5_r24",
+      "title": "Casabianca",
+      "author": "Felicia Hemans",
+      "stanzas": [
+        "The boy stood on the burning deck",
+        "Whence all but he had fled;",
+        "The flame that lit the battle's wreck",
+        "Shone round him o'er the dead."
+      ],
+      "moralOrTheme": "Duty, loyalty, and unwavering honor"
+    },
+    {
+      "id": "c5_r25",
+      "title": "The Inchcape Rock",
+      "author": "Robert Southey",
+      "stanzas": [
+        "No stir in the air, no stir in the sea,",
+        "The ship was still as she could be;",
+        "Her sails from heaven received no motion,",
+        "Her keel was steady in the ocean."
+      ],
+      "moralOrTheme": "Karma: our evil acts return to harm ourselves"
+    },
+    {
+      "id": "c5_r26",
+      "title": "Ozymandias",
+      "author": "Percy Bysshe Shelley",
+      "stanzas": [
+        "I met a traveller from an antique land,",
+        "Who said\u2014'Two vast and trunkless legs of stone",
+        "Stand in the desert. . . . Near them, on the sand,",
+        "Half sunk a shattered visage lies'"
+      ],
+      "moralOrTheme": "Time humbles even the proudest rulers"
+    },
+    {
+      "id": "c5_r27",
+      "title": "Lochinvar",
+      "author": "Sir Walter Scott",
+      "stanzas": [
+        "O, young Lochinvar is come out of the west,",
+        "Through all the wide Border his steed was the best;",
+        "And save his good broadsword he weapons had none,",
+        "He rode all unarm'd, and he rode all alone."
+      ],
+      "moralOrTheme": "Courage and romantic gallantry"
+    },
+    {
+      "id": "c5_r28",
+      "title": "Incident of the French Camp",
+      "author": "Robert Browning",
+      "stanzas": [
+        "You know, we French stormed Ratisbon:",
+        "A mile or so away, On a little mound, Napoleon",
+        "Stood on our storming-day;"
+      ],
+      "moralOrTheme": "Heroism and sacrifice"
+    },
+    {
+      "id": "c5_r29",
+      "title": "The Pied Piper of Hamelin",
+      "author": "Robert Browning",
+      "stanzas": [
+        "Hamelin Town's in Brunswick,",
+        "By famous Hanover city;",
+        "The river Weser, deep and wide,",
+        "Washes its wall on the southern side;"
+      ],
+      "moralOrTheme": "Keeping promises and integrity"
+    },
+    {
+      "id": "c5_r30",
+      "title": "Up-Hill",
+      "author": "Christina Rossetti",
+      "stanzas": [
+        "Does the road wind up-hill all the way?",
+        "Yes, to the very end.",
+        "Will the day's journey take the whole long day?",
+        "From morn to night, my friend."
+      ],
+      "moralOrTheme": "Life is an upward climb with a peaceful summit"
+    },
+    {
+      "id": "c5_r31",
+      "title": "Song of the Brook",
+      "author": "Alfred Lord Tennyson",
+      "stanzas": [
+        "I chatter over stony ways,",
+        "In little sharps and trebles,",
+        "I bubble into eddying bays,",
+        "I babble on the pebbles."
+      ],
+      "moralOrTheme": "Eternity of natural rivers"
+    },
+    {
+      "id": "c5_r32",
+      "title": "The Chambered Nautilus",
+      "author": "Oliver Wendell Holmes",
+      "stanzas": [
+        "Build thee more stately mansions, O my soul,",
+        "As the swift seasons roll!",
+        "Leave thy low-vaulted past!",
+        "Let each new temple, nobler than the last"
+      ],
+      "moralOrTheme": "Continuous self-improvement"
+    },
+    {
+      "id": "c5_r33",
+      "title": "A Thing of Beauty",
+      "author": "John Keats",
+      "stanzas": [
+        "A thing of beauty is a joy for ever:",
+        "Its loveliness increases; it will never",
+        "Pass into nothingness; but still will keep",
+        "A bower quiet for us, and a sleep"
+      ],
+      "moralOrTheme": "True art and beauty bring eternal peace"
+    },
+    {
+      "id": "c5_r34",
+      "title": "Invictus",
+      "author": "William Ernest Henley",
+      "stanzas": [
+        "Out of the night that covers me,",
+        "Black as the pit from pole to pole,",
+        "I thank whatever gods may be",
+        "For my unconquerable soul."
+      ],
+      "moralOrTheme": "Indomitable human willpower"
+    },
+    {
+      "id": "c5_r35",
+      "title": "A Red, Red Rose",
+      "author": "Robert Burns",
+      "stanzas": [
+        "O my Luve is like a red, red rose",
+        "That's newly sprung in June;",
+        "O my Luve is like the melody",
+        "That's sweetly played in tune."
+      ],
+      "moralOrTheme": "Pure universal affection"
+    }
+  ]
+}

@@ -24,5 +24,6 @@ module.exports = {
         warning: "#f1c40f",
       },
     },
+  },
   plugins: [],
 };
