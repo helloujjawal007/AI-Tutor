@@ -6,6 +6,8 @@ import {
   CBSEClass,
   SubjectType,
   getTableLines,
+  searchWordsFast,
+  searchRhymesFast,
   WordItem,
   RhymeItem,
 } from "@/lib/curriculum/cbse-data";
@@ -98,6 +100,20 @@ export default function LessonScreen({
     );
   }, [currentRhymeList, rhymeIndex]);
   const currentRhymeLine = currentRhyme?.stanzas[rhymeLineIndex] || "";
+
+  // Pre-warmed Indian Lady Voice
+  useEffect(() => {
+    IndianLadyVoice.init();
+  }, []);
+
+  // High-performance memoized search results
+  const filteredWords = useMemo(() => {
+    return searchWordsFast(selectedClass, wordSearch, 30);
+  }, [selectedClass, wordSearch]);
+
+  const filteredRhymes = useMemo(() => {
+    return searchRhymesFast(selectedClass, rhymeSearch);
+  }, [selectedClass, rhymeSearch]);
 
   // Speak with Soft Indian Lady Voice (English only)
   const speakAsLadyTeacher = useCallback(
@@ -194,28 +210,30 @@ export default function LessonScreen({
   // -------------------------------------------------------------
   const getExpectedProduct = useCallback(() => currentTable * multiplier, [currentTable, multiplier]);
 
-  // Generate 4 multiple-choice options for Tables
-  const getTableChoices = useCallback(() => {
+  // High-performance pure & deterministic choices for Tables (React 19 pure render compliant)
+  const tableChoices = useMemo(() => {
     const correct = currentTable * multiplier;
-    const offsets = [-currentTable, currentTable, currentTable * 2, -currentTable * 2, 1, -1];
-    const set = new Set<number>([correct]);
-    for (const offset of offsets) {
-      if (set.size >= 4) break;
-      const candidate = correct + offset;
-      if (candidate > 0 && candidate !== correct) {
-        set.add(candidate);
+    const offsets = [-currentTable, currentTable, currentTable * 2, -currentTable * 2, 2, -2];
+    const candidates = [correct];
+    for (let i = 0; i < offsets.length; i++) {
+      if (candidates.length >= 4) break;
+      const c = correct + offsets[i];
+      if (c > 0 && !candidates.includes(c)) {
+        candidates.push(c);
       }
     }
-    while (set.size < 4) {
-      set.add(Math.floor(Math.random() * (currentTable * 10)) + 1);
+    while (candidates.length < 4) {
+      const filler = currentTable * (multiplier + candidates.length) + 1;
+      if (!candidates.includes(filler)) {
+        candidates.push(filler);
+      } else {
+        candidates.push(correct + candidates.length * 3);
+      }
     }
-    return Array.from(set).sort(() => Math.random() - 0.5);
+    // Deterministic shift based on current question to shuffle options purely
+    const shift = (currentTable * 3 + multiplier * 7) % 4;
+    return [...candidates.slice(shift), ...candidates.slice(0, shift)];
   }, [currentTable, multiplier]);
-
-  const [tableChoices, setTableChoices] = useState<number[]>([]);
-  useEffect(() => {
-    setTableChoices(getTableChoices());
-  }, [currentTable, multiplier, getTableChoices]);
 
   const verifyTableAnswer = useCallback(
     (candidate: string | number) => {
@@ -929,34 +947,27 @@ export default function LessonScreen({
             {wordSearch.trim() && (
               <div className="mb-5 max-h-36 overflow-y-auto bg-white border border-purple-200 rounded-2xl p-3 shadow-inner">
                 <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">
-                  Matching Words ({currentWordList.filter((w) => w.word.toLowerCase().includes(wordSearch.toLowerCase()) || w.meaning.toLowerCase().includes(wordSearch.toLowerCase())).length}):
+                  Matching Words ({filteredWords.length}):
                 </p>
                 <div className="flex flex-wrap gap-1.5">
-                  {currentWordList
-                    .map((w, idx) => ({ ...w, idx }))
-                    .filter((w) =>
-                      w.word.toLowerCase().includes(wordSearch.toLowerCase()) ||
-                      w.meaning.toLowerCase().includes(wordSearch.toLowerCase())
-                    )
-                    .slice(0, 30)
-                    .map((item) => (
-                      <button
-                        key={item.id}
-                        onClick={() => {
-                          setWordIndex(item.idx);
-                          setWordSearch("");
-                          setFeedback(null);
-                          setState("IDLE");
-                        }}
-                        className={`text-xs font-bold px-2.5 py-1 rounded-lg transition cursor-pointer ${
-                          wordIndex === item.idx
-                            ? "bg-purple-600 text-white"
-                            : "bg-purple-50 text-purple-700 hover:bg-purple-100 border border-purple-200"
-                        }`}
-                      >
-                        #{item.idx + 1} {item.word}
-                      </button>
-                    ))}
+                  {filteredWords.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => {
+                        setWordIndex(item.idx);
+                        setWordSearch("");
+                        setFeedback(null);
+                        setState("IDLE");
+                      }}
+                      className={`text-xs font-bold px-2.5 py-1 rounded-lg transition cursor-pointer ${
+                        wordIndex === item.idx
+                          ? "bg-purple-600 text-white"
+                          : "bg-purple-50 text-purple-700 hover:bg-purple-100 border border-purple-200"
+                      }`}
+                    >
+                      #{item.idx + 1} {item.word}
+                    </button>
+                  ))}
                 </div>
               </div>
             )}
@@ -1192,31 +1203,24 @@ export default function LessonScreen({
 
             {/* Rhyme Selector Pills */}
             <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-6 scrollbar-thin">
-              {currentRhymeList
-                .map((rhyme, idx) => ({ ...rhyme, originalIdx: idx }))
-                .filter((r) =>
-                  !rhymeSearch.trim() ||
-                  r.title.toLowerCase().includes(rhymeSearch.toLowerCase()) ||
-                  r.moralOrTheme.toLowerCase().includes(rhymeSearch.toLowerCase())
-                )
-                .map((rhyme) => (
-                  <button
-                    key={rhyme.id}
-                    onClick={() => {
-                      setRhymeIndex(rhyme.originalIdx);
-                      setRhymeLineIndex(0);
-                      setFeedback(null);
-                      setState("IDLE");
-                    }}
-                    className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer ${
-                      rhymeIndex === rhyme.originalIdx
-                        ? "bg-pink-600 text-white shadow-sm"
-                        : "bg-pink-50 text-pink-700 border border-pink-200 hover:bg-pink-100"
-                    }`}
-                  >
-                    🎵 {rhyme.title}
-                  </button>
-                ))}
+              {filteredRhymes.map((rhyme) => (
+                <button
+                  key={rhyme.id}
+                  onClick={() => {
+                    setRhymeIndex(rhyme.originalIdx);
+                    setRhymeLineIndex(0);
+                    setFeedback(null);
+                    setState("IDLE");
+                  }}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer ${
+                    rhymeIndex === rhyme.originalIdx
+                      ? "bg-pink-600 text-white shadow-sm"
+                      : "bg-pink-50 text-pink-700 border border-pink-200 hover:bg-pink-100"
+                  }`}
+                >
+                  🎵 {rhyme.title}
+                </button>
+              ))}
             </div>
 
             {state === "SUMMARY" ? (

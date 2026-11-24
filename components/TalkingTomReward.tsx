@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, memo } from "react";
 
 interface TalkingTomRewardProps {
   childName: string;
@@ -8,7 +8,7 @@ interface TalkingTomRewardProps {
   taskTitle?: string;
 }
 
-// AudioContext singleton to prevent exceeding browser hardware context limits
+// AudioContext singleton to prevent exceeding hardware limits
 let sharedAudioCtx: AudioContext | null = null;
 function getAudioContext(): AudioContext | null {
   if (typeof window === "undefined") return null;
@@ -27,6 +27,179 @@ function getAudioContext(): AudioContext | null {
   }
 }
 
+type TomActionType = "idle" | "talking" | "purring" | "drinking" | "laughing" | "dancing" | "poked";
+
+/**
+ * High-Performance, Memoized Talking Tom Avatar
+ * Mouth animation runs on CSS compositor thread - 0 React re-renders during speech!
+ */
+const TalkingTomAvatar = memo(function TalkingTomAvatar({
+  action,
+  onPet,
+  onTickle,
+  onPoke,
+}: {
+  action: TomActionType;
+  onPet: () => void;
+  onTickle: () => void;
+  onPoke: () => void;
+}) {
+  return (
+    <div
+      className={`cursor-pointer transition-transform duration-300 select-none will-change-transform ${
+        action === "laughing"
+          ? "animate-bounce scale-105"
+          : action === "dancing"
+          ? "animate-pulse scale-105"
+          : action === "poked"
+          ? "rotate-6 scale-95"
+          : action === "purring"
+          ? "scale-105"
+          : "hover:scale-102"
+      }`}
+    >
+      <svg width="220" height="250" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <style>{`
+          @keyframes tomMouthFlap {
+            0%, 100% { transform: scaleY(0.4) scaleX(0.85); }
+            50% { transform: scaleY(1.35) scaleX(1.1); }
+          }
+          .tom-talking-mouth {
+            transform-origin: 100px 115px;
+            animation: tomMouthFlap 0.16s ease-in-out infinite alternate;
+          }
+        `}</style>
+
+        {/* Milk Bowl (visible during drinking) */}
+        {action === "drinking" && (
+          <g id="milk-bowl">
+            <ellipse cx="100" cy="225" rx="42" ry="14" fill="#3b82f6" stroke="#1d4ed8" strokeWidth="3" />
+            <ellipse cx="100" cy="223" rx="36" ry="10" fill="#ffffff" />
+            <ellipse cx="95" cy="223" rx="10" ry="4" fill="#f1f5f9" />
+            <circle cx="108" cy="222" r="3" fill="#e2e8f0" />
+          </g>
+        )}
+
+        {/* Left Ear */}
+        <g id="left-ear" className={action === "purring" || action === "dancing" ? "animate-pulse" : ""} onClick={onPet}>
+          <path d="M35 70 L20 20 L70 45 Z" fill="#94a3b8" stroke="#475569" strokeWidth="4" />
+          <path d="M38 60 L28 32 L60 48 Z" fill="#f472b6" />
+        </g>
+
+        {/* Right Ear */}
+        <g id="right-ear" className={action === "purring" || action === "dancing" ? "animate-pulse" : ""} onClick={onPet}>
+          <path d="M165 70 L180 20 L130 45 Z" fill="#94a3b8" stroke="#475569" strokeWidth="4" />
+          <path d="M162 60 L172 32 L140 48 Z" fill="#f472b6" />
+        </g>
+
+        {/* Head (Clickable to Pet) */}
+        <ellipse
+          cx="100"
+          cy="85"
+          rx="65"
+          ry="55"
+          fill="#94a3b8"
+          stroke="#475569"
+          strokeWidth="4"
+          onClick={onPet}
+          className="cursor-pointer"
+        />
+
+        {/* Whiskers */}
+        <line x1="20" y1="85" x2="60" y2="90" stroke="#334155" strokeWidth="2.5" />
+        <line x1="20" y1="100" x2="60" y2="98" stroke="#334155" strokeWidth="2.5" />
+        <line x1="140" y1="90" x2="180" y2="85" stroke="#334155" strokeWidth="2.5" />
+        <line x1="140" y1="98" x2="180" y2="100" stroke="#334155" strokeWidth="2.5" />
+
+        {/* Eyes */}
+        {action === "purring" || action === "laughing" ? (
+          <>
+            <path d="M62 76 Q75 62 88 76" stroke="#1e293b" strokeWidth="4.5" fill="none" strokeLinecap="round" />
+            <path d="M112 76 Q125 62 138 76" stroke="#1e293b" strokeWidth="4.5" fill="none" strokeLinecap="round" />
+            <ellipse cx="55" cy="92" rx="8" ry="5" fill="#f472b6" opacity="0.6" />
+            <ellipse cx="145" cy="92" rx="8" ry="5" fill="#f472b6" opacity="0.6" />
+          </>
+        ) : action === "poked" ? (
+          <>
+            <circle cx="75" cy="75" r="14" fill="#ffffff" stroke="#334155" strokeWidth="3" />
+            <path d="M70 75 Q75 70 80 75 Q75 80 70 75" stroke="#e11d48" strokeWidth="3" fill="none" />
+            <circle cx="125" cy="75" r="14" fill="#ffffff" stroke="#334155" strokeWidth="3" />
+            <path d="M120 75 Q125 70 130 75 Q125 80 120 75" stroke="#e11d48" strokeWidth="3" fill="none" />
+          </>
+        ) : (
+          <>
+            <ellipse cx="75" cy="75" rx="15" ry="18" fill="#ffffff" stroke="#334155" strokeWidth="3" />
+            <circle cx="76" cy="75" r="8" fill="#0284c7" />
+            <circle cx="78" cy="73" r="3" fill="#ffffff" />
+
+            <ellipse cx="125" cy="75" rx="15" ry="18" fill="#ffffff" stroke="#334155" strokeWidth="3" />
+            <circle cx="124" cy="75" r="8" fill="#0284c7" />
+            <circle cx="126" cy="73" r="3" fill="#ffffff" />
+          </>
+        )}
+
+        {/* Pink Nose */}
+        <polygon points="94,95 106,95 100,103" fill="#f472b6" onClick={onPoke} />
+
+        {/* Animated Mouth */}
+        {action === "talking" ? (
+          <g className="tom-talking-mouth">
+            <ellipse cx="100" cy="115" rx="12" ry="9" fill="#b91c1c" stroke="#991b1b" strokeWidth="2.5" />
+            <ellipse cx="100" cy="120" rx="7" ry="4" fill="#f472b6" />
+          </g>
+        ) : action === "drinking" ? (
+          <g>
+            <circle cx="100" cy="114" r="8" fill="#b91c1c" />
+            <ellipse cx="100" cy="120" rx="6" ry="7" fill="#f472b6" />
+          </g>
+        ) : action === "laughing" ? (
+          <g>
+            <path d="M88 110 Q100 130 112 110 Z" fill="#b91c1c" stroke="#991b1b" strokeWidth="2.5" />
+            <ellipse cx="100" cy="122" rx="7" ry="4" fill="#f472b6" />
+          </g>
+        ) : (
+          <path d="M88 108 Q100 120 112 108" stroke="#1e293b" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        )}
+
+        {/* Body */}
+        <ellipse
+          cx="100"
+          cy="180"
+          rx="55"
+          ry="45"
+          fill="#94a3b8"
+          stroke="#475569"
+          strokeWidth="4"
+          onClick={onTickle}
+          className="cursor-pointer"
+        />
+
+        {/* White Tummy patch (Tap to tickle!) */}
+        <ellipse
+          cx="100"
+          cy="180"
+          rx="36"
+          ry="30"
+          fill="#f1f5f9"
+          className="hover:fill-pink-100 transition cursor-pointer"
+          onClick={(e) => {
+            e.stopPropagation();
+            onTickle();
+          }}
+        />
+
+        {/* Paws */}
+        <ellipse cx="52" cy="165" rx="14" ry="22" fill="#94a3b8" stroke="#475569" strokeWidth="3" onClick={onPoke} />
+        <ellipse cx="148" cy="165" rx="14" ry="22" fill="#94a3b8" stroke="#475569" strokeWidth="3" onClick={onPoke} />
+
+        {/* Feet */}
+        <ellipse cx="75" cy="225" rx="20" ry="12" fill="#64748b" onClick={onPoke} />
+        <ellipse cx="125" cy="225" rx="20" ry="12" fill="#64748b" onClick={onPoke} />
+      </svg>
+    </div>
+  );
+});
+
 export default function TalkingTomReward({
   childName = "Aarav",
   onFinish,
@@ -34,34 +207,26 @@ export default function TalkingTomReward({
 }: TalkingTomRewardProps) {
   // 2 Minutes = 120 Seconds
   const [secondsLeft, setSecondsLeft] = useState<number>(120);
-  const [tomAction, setTomAction] = useState<
-    "idle" | "talking" | "purring" | "drinking" | "laughing" | "dancing" | "poked"
-  >("idle");
+  const [tomAction, setTomAction] = useState<TomActionType>("idle");
   const [tomSpeech, setTomSpeech] = useState<string>(
     `Meow! Hello ${childName}! I am Talking Tom. Talk to me, tickle my tummy, or feed me milk!`
   );
   const [isListening, setIsListening] = useState<boolean>(false);
   const [heardText, setHeardText] = useState<string>("");
-  const [mouthOpen, setMouthOpen] = useState<boolean>(false);
   const [customText, setCustomText] = useState<string>("");
-  const [particles, setParticles] = useState<Array<{ id: number; emoji: string; x: number; y: number }>>([]);
+  const [particleEmoji, setParticleEmoji] = useState<string | null>(null);
 
   const recognitionRef = useRef<any>(null);
-  const mouthIntervalRef = useRef<any>(null);
   const speechFallbackTimerRef = useRef<any>(null);
+  const particleTimeoutRef = useRef<any>(null);
 
-  // Trigger floating particles (hearts, notes, milk bubbles)
-  const spawnParticles = useCallback((emoji: string, count: number = 5) => {
-    const newItems = Array.from({ length: count }, (_, i) => ({
-      id: Date.now() + i + Math.random(),
-      emoji,
-      x: 35 + Math.random() * 30, // percentage from left
-      y: 40 + Math.random() * 20, // percentage from top
-    }));
-    setParticles((prev) => [...prev, ...newItems]);
-    setTimeout(() => {
-      setParticles((prev) => prev.filter((p) => !newItems.some((n) => n.id === p.id)));
-    }, 1500);
+  // Trigger floating particle burst without memory allocation
+  const triggerParticleBurst = useCallback((emoji: string) => {
+    if (particleTimeoutRef.current) clearTimeout(particleTimeoutRef.current);
+    setParticleEmoji(emoji);
+    particleTimeoutRef.current = setTimeout(() => {
+      setParticleEmoji(null);
+    }, 1400);
   }, []);
 
   // Play fun synthesized sound effects using Web Audio API
@@ -76,7 +241,6 @@ export default function TalkingTomReward({
         }
 
         if (type === "purr") {
-          // Low rumbling sawtooth cat purr with filter
           const osc = ctx.createOscillator();
           const filter = ctx.createBiquadFilter();
           const gain = ctx.createGain();
@@ -96,7 +260,6 @@ export default function TalkingTomReward({
           osc.start(ctx.currentTime);
           osc.stop(ctx.currentTime + 1.4);
         } else if (type === "meow") {
-          // Authentic cat meow formant pitch sweep
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
           osc.type = "triangle";
@@ -115,7 +278,6 @@ export default function TalkingTomReward({
           osc.start(ctx.currentTime);
           osc.stop(ctx.currentTime + 0.65);
         } else if (type === "slurp") {
-          // Drinking water/milk bubbles
           for (let i = 0; i < 5; i++) {
             const osc = ctx.createOscillator();
             const gain = ctx.createGain();
@@ -135,7 +297,6 @@ export default function TalkingTomReward({
             osc.stop(t + 0.1);
           }
         } else if (type === "giggle") {
-          // Playful giggles
           const freqs = [550, 680, 600, 750, 820, 700];
           freqs.forEach((freq, idx) => {
             const osc = ctx.createOscillator();
@@ -154,7 +315,6 @@ export default function TalkingTomReward({
             osc.stop(t + 0.06);
           });
         } else if (type === "dance") {
-          // Cheerful 8-note dance party melody
           const notes = [523, 659, 784, 880, 784, 659, 587, 523];
           notes.forEach((freq, i) => {
             const osc = ctx.createOscillator();
@@ -173,7 +333,6 @@ export default function TalkingTomReward({
             osc.stop(t + 0.11);
           });
         } else if (type === "boing") {
-          // Funny poke spring sound
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
           osc.type = "sine";
@@ -241,7 +400,6 @@ export default function TalkingTomReward({
       }
 
       const utterance = new SpeechSynthesisUtterance(text);
-      // High pitch and cheerful pace for comical cartoon cat voice
       utterance.pitch = 1.75;
       utterance.rate = 1.2;
 
@@ -271,7 +429,7 @@ export default function TalkingTomReward({
       utterance.onend = cleanupSpeech;
       utterance.onerror = cleanupSpeech;
 
-      // Safety timeout: ensure Tom's mouth stops moving even if browser event drops
+      // Watchdog timeout to prevent speech hanging
       const estimatedDurationMs = Math.max(1600, text.length * 90);
       speechFallbackTimerRef.current = setTimeout(cleanupSpeech, estimatedDurationMs);
 
@@ -281,21 +439,6 @@ export default function TalkingTomReward({
       onEnd?.();
     }
   }, []);
-
-  // Oscillate mouth movement while talking
-  useEffect(() => {
-    if (tomAction === "talking") {
-      mouthIntervalRef.current = setInterval(() => {
-        setMouthOpen((prev) => !prev);
-      }, 140);
-    } else {
-      setMouthOpen(false);
-      if (mouthIntervalRef.current) clearInterval(mouthIntervalRef.current);
-    }
-    return () => {
-      if (mouthIntervalRef.current) clearInterval(mouthIntervalRef.current);
-    };
-  }, [tomAction]);
 
   // 2-Minute Timer Countdown (120s down to 0)
   useEffect(() => {
@@ -328,7 +471,7 @@ export default function TalkingTomReward({
     const recognition = recognitionRef.current;
     return () => {
       if (speechFallbackTimerRef.current) clearTimeout(speechFallbackTimerRef.current);
-      if (mouthIntervalRef.current) clearInterval(mouthIntervalRef.current);
+      if (particleTimeoutRef.current) clearTimeout(particleTimeoutRef.current);
       if (recognition) {
         try {
           recognition.stop();
@@ -343,7 +486,7 @@ export default function TalkingTomReward({
   }, []);
 
   // Voice Mimic: Listen to child and repeat back in Tom's squeaky cartoon voice!
-  const startListeningToChild = () => {
+  const startListeningToChild = useCallback(() => {
     if (typeof window === "undefined") return;
     const SpeechRec = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
 
@@ -373,9 +516,8 @@ export default function TalkingTomReward({
         const transcript = event.results[0][0].transcript;
         setIsListening(false);
         setHeardText(`You said: "${transcript}"`);
-        spawnParticles("😸", 4);
+        triggerParticleBurst("😸");
         playSoundEffect("meow");
-        // Tom repeats what child said with funny cat additions!
         speakAsTom(`${transcript}! Meow! Hehehe!`);
       };
 
@@ -401,62 +543,68 @@ export default function TalkingTomReward({
       setIsListening(false);
       setHeardText("Tap below to make Tom talk!");
     }
-  };
+  }, [playSoundEffect, speakAsTom, triggerParticleBurst]);
 
   // Quick preset speech buttons (works instantly without microphone permission)
-  const handleQuickSay = (phrase: string) => {
-    setHeardText(`You said: "${phrase}"`);
-    playSoundEffect("meow");
-    spawnParticles("⭐", 5);
-    speakAsTom(`${phrase}! Meow! Hehehe!`);
-  };
+  const handleQuickSay = useCallback(
+    (phrase: string) => {
+      setHeardText(`You said: "${phrase}"`);
+      playSoundEffect("meow");
+      triggerParticleBurst("⭐");
+      speakAsTom(`${phrase}! Meow! Hehehe!`);
+    },
+    [playSoundEffect, speakAsTom, triggerParticleBurst]
+  );
 
   // Custom text input repeat
-  const handleCustomSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!customText.trim()) return;
-    setHeardText(`You typed: "${customText}"`);
-    playSoundEffect("meow");
-    spawnParticles("💬", 4);
-    speakAsTom(`${customText}! Meow!`);
-    setCustomText("");
-  };
+  const handleCustomSubmit = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault();
+      if (!customText.trim()) return;
+      setHeardText(`You typed: "${customText}"`);
+      playSoundEffect("meow");
+      triggerParticleBurst("💬");
+      speakAsTom(`${customText}! Meow!`);
+      setCustomText("");
+    },
+    [customText, playSoundEffect, speakAsTom, triggerParticleBurst]
+  );
 
   // Interactive Tom Actions
-  const handlePetTom = () => {
+  const handlePetTom = useCallback(() => {
     setTomAction("purring");
     playSoundEffect("purr");
-    spawnParticles("❤️", 6);
+    triggerParticleBurst("❤️");
     speakAsTom(`Purrrr! That feels so good, ${childName}! You are my best friend!`);
-  };
+  }, [childName, playSoundEffect, speakAsTom, triggerParticleBurst]);
 
-  const handleTickleTom = () => {
+  const handleTickleTom = useCallback(() => {
     setTomAction("laughing");
     playSoundEffect("giggle");
-    spawnParticles("✨", 6);
+    triggerParticleBurst("✨");
     speakAsTom(`Hehehe! Hahaha! Stop it, ${childName}! My tummy tickles so much!`);
-  };
+  }, [childName, playSoundEffect, speakAsTom, triggerParticleBurst]);
 
-  const handleFeedMilk = () => {
+  const handleFeedMilk = useCallback(() => {
     setTomAction("drinking");
     playSoundEffect("slurp");
-    spawnParticles("🥛", 5);
+    triggerParticleBurst("🥛");
     speakAsTom(`Slurp, slurp, slurp! Ahhh, delicious cold milk! Thank you, ${childName}!`);
-  };
+  }, [childName, playSoundEffect, speakAsTom, triggerParticleBurst]);
 
-  const handleTomDance = () => {
+  const handleTomDance = useCallback(() => {
     setTomAction("dancing");
     playSoundEffect("dance");
-    spawnParticles("🎵", 8);
+    triggerParticleBurst("🎵");
     speakAsTom(`Meow meow, la la la! Look at my cool cat dance moves! Join me, ${childName}!`);
-  };
+  }, [childName, playSoundEffect, speakAsTom, triggerParticleBurst]);
 
-  const handlePokeTom = () => {
+  const handlePokeTom = useCallback(() => {
     setTomAction("poked");
     playSoundEffect("boing");
-    spawnParticles("💥", 4);
+    triggerParticleBurst("💥");
     speakAsTom(`Ouch! Hey, gentle please, buddy! Hehehe!`);
-  };
+  }, [playSoundEffect, speakAsTom, triggerParticleBurst]);
 
   // Format time (MM:SS)
   const minutes = Math.floor(secondsLeft / 60);
@@ -466,18 +614,11 @@ export default function TalkingTomReward({
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-950 via-purple-900 to-slate-950 text-white p-4 sm:p-6 flex flex-col items-center justify-between relative overflow-hidden select-none">
       {/* Floating Particles Overlay */}
-      {particles.map((p) => (
-        <div
-          key={p.id}
-          className="absolute text-2xl sm:text-3xl pointer-events-none transition-all duration-1000 ease-out animate-bounce z-50"
-          style={{
-            left: `${p.x}%`,
-            top: `${p.y}%`,
-          }}
-        >
-          {p.emoji}
+      {particleEmoji && (
+        <div className="absolute inset-0 pointer-events-none flex items-center justify-center z-50 animate-ping text-5xl">
+          {particleEmoji}
         </div>
-      ))}
+      )}
 
       {/* Top Banner & Timer */}
       <div className="w-full max-w-2xl bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-4 sm:p-5 shadow-2xl flex flex-wrap items-center justify-between gap-4 z-10">
@@ -536,188 +677,12 @@ export default function TalkingTomReward({
 
       {/* Animated Talking Tom Character */}
       <div className="my-2 relative flex flex-col items-center z-10">
-        <div
-          className={`cursor-pointer transition-transform duration-300 select-none ${
-            tomAction === "laughing"
-              ? "animate-bounce scale-105"
-              : tomAction === "dancing"
-              ? "animate-pulse scale-105"
-              : tomAction === "poked"
-              ? "rotate-6 scale-95"
-              : tomAction === "purring"
-              ? "scale-105"
-              : "hover:scale-102"
-          }`}
-        >
-          {/* Tom's SVG Avatar with Expression States */}
-          <svg width="220" height="250" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Milk Bowl (visible during drinking) */}
-            {tomAction === "drinking" && (
-              <g id="milk-bowl">
-                <ellipse cx="100" cy="225" rx="42" ry="14" fill="#3b82f6" stroke="#1d4ed8" strokeWidth="3" />
-                <ellipse cx="100" cy="223" rx="36" ry="10" fill="#ffffff" />
-                <ellipse cx="95" cy="223" rx="10" ry="4" fill="#f1f5f9" />
-                <circle cx="108" cy="222" r="3" fill="#e2e8f0" />
-              </g>
-            )}
-
-            {/* Left Ear */}
-            <g
-              id="left-ear"
-              className={tomAction === "purring" || tomAction === "dancing" ? "animate-pulse" : ""}
-              onClick={handlePetTom}
-            >
-              <path d="M35 70 L20 20 L70 45 Z" fill="#94a3b8" stroke="#475569" strokeWidth="4" />
-              <path d="M38 60 L28 32 L60 48 Z" fill="#f472b6" />
-            </g>
-
-            {/* Right Ear */}
-            <g
-              id="right-ear"
-              className={tomAction === "purring" || tomAction === "dancing" ? "animate-pulse" : ""}
-              onClick={handlePetTom}
-            >
-              <path d="M165 70 L180 20 L130 45 Z" fill="#94a3b8" stroke="#475569" strokeWidth="4" />
-              <path d="M162 60 L172 32 L140 48 Z" fill="#f472b6" />
-            </g>
-
-            {/* Head (Clickable to Pet) */}
-            <ellipse
-              cx="100"
-              cy="85"
-              rx="65"
-              ry="55"
-              fill="#94a3b8"
-              stroke="#475569"
-              strokeWidth="4"
-              onClick={handlePetTom}
-              className="cursor-pointer"
-            />
-
-            {/* Whiskers */}
-            <line x1="20" y1="85" x2="60" y2="90" stroke="#334155" strokeWidth="2.5" />
-            <line x1="20" y1="100" x2="60" y2="98" stroke="#334155" strokeWidth="2.5" />
-            <line x1="140" y1="90" x2="180" y2="85" stroke="#334155" strokeWidth="2.5" />
-            <line x1="140" y1="98" x2="180" y2="100" stroke="#334155" strokeWidth="2.5" />
-
-            {/* Eyes */}
-            {tomAction === "purring" || tomAction === "laughing" ? (
-              // Happy squinting eyes
-              <>
-                <path d="M62 76 Q75 62 88 76" stroke="#1e293b" strokeWidth="4.5" fill="none" strokeLinecap="round" />
-                <path d="M112 76 Q125 62 138 76" stroke="#1e293b" strokeWidth="4.5" fill="none" strokeLinecap="round" />
-                {/* Blushing cheeks */}
-                <ellipse cx="55" cy="92" rx="8" ry="5" fill="#f472b6" opacity="0.6" />
-                <ellipse cx="145" cy="92" rx="8" ry="5" fill="#f472b6" opacity="0.6" />
-              </>
-            ) : tomAction === "poked" ? (
-              // Dizzy spiral eyes
-              <>
-                <circle cx="75" cy="75" r="14" fill="#ffffff" stroke="#334155" strokeWidth="3" />
-                <path d="M70 75 Q75 70 80 75 Q75 80 70 75" stroke="#e11d48" strokeWidth="3" fill="none" />
-                <circle cx="125" cy="75" r="14" fill="#ffffff" stroke="#334155" strokeWidth="3" />
-                <path d="M120 75 Q125 70 130 75 Q125 80 120 75" stroke="#e11d48" strokeWidth="3" fill="none" />
-              </>
-            ) : (
-              // Normal big bright cartoon eyes
-              <>
-                <ellipse cx="75" cy="75" rx="15" ry="18" fill="#ffffff" stroke="#334155" strokeWidth="3" />
-                <circle cx="76" cy="75" r="8" fill="#0284c7" />
-                <circle cx="78" cy="73" r="3" fill="#ffffff" />
-
-                <ellipse cx="125" cy="75" rx="15" ry="18" fill="#ffffff" stroke="#334155" strokeWidth="3" />
-                <circle cx="124" cy="75" r="8" fill="#0284c7" />
-                <circle cx="126" cy="73" r="3" fill="#ffffff" />
-              </>
-            )}
-
-            {/* Pink Nose */}
-            <polygon points="94,95 106,95 100,103" fill="#f472b6" onClick={handlePokeTom} />
-
-            {/* Animated Mouth */}
-            {tomAction === "talking" ? (
-              mouthOpen ? (
-                // Open talking mouth
-                <g>
-                  <ellipse cx="100" cy="116" rx="14" ry="12" fill="#b91c1c" stroke="#991b1b" strokeWidth="2.5" />
-                  <ellipse cx="100" cy="122" rx="9" ry="5" fill="#f472b6" />
-                </g>
-              ) : (
-                // Closed talking mouth
-                <ellipse cx="100" cy="113" rx="10" ry="4" fill="#b91c1c" stroke="#991b1b" strokeWidth="2" />
-              )
-            ) : tomAction === "drinking" ? (
-              // Lapping tongue
-              <g>
-                <circle cx="100" cy="114" r="8" fill="#b91c1c" />
-                <ellipse cx="100" cy="120" rx="6" ry="7" fill="#f472b6" />
-              </g>
-            ) : tomAction === "laughing" ? (
-              // Big laughing mouth
-              <g>
-                <path d="M88 110 Q100 130 112 110 Z" fill="#b91c1c" stroke="#991b1b" strokeWidth="2.5" />
-                <ellipse cx="100" cy="122" rx="7" ry="4" fill="#f472b6" />
-              </g>
-            ) : (
-              // Happy gentle smile
-              <path d="M88 108 Q100 120 112 108" stroke="#1e293b" strokeWidth="3.5" fill="none" strokeLinecap="round" />
-            )}
-
-            {/* Body */}
-            <ellipse
-              cx="100"
-              cy="180"
-              rx="55"
-              ry="45"
-              fill="#94a3b8"
-              stroke="#475569"
-              strokeWidth="4"
-              onClick={handleTickleTom}
-              className="cursor-pointer"
-            />
-
-            {/* White Tummy patch (Tap to tickle!) */}
-            <ellipse
-              cx="100"
-              cy="180"
-              rx="36"
-              ry="30"
-              fill="#f1f5f9"
-              className="hover:fill-pink-100 transition cursor-pointer"
-              onClick={(e) => {
-                e.stopPropagation();
-                handleTickleTom();
-              }}
-            />
-
-            {/* Paws */}
-            <ellipse
-              cx="52"
-              cy="165"
-              rx="14"
-              ry="22"
-              fill="#94a3b8"
-              stroke="#475569"
-              strokeWidth="3"
-              onClick={handlePokeTom}
-            />
-            <ellipse
-              cx="148"
-              cy="165"
-              rx="14"
-              ry="22"
-              fill="#94a3b8"
-              stroke="#475569"
-              strokeWidth="3"
-              onClick={handlePokeTom}
-            />
-
-            {/* Feet */}
-            <ellipse cx="75" cy="225" rx="20" ry="12" fill="#64748b" onClick={handlePokeTom} />
-            <ellipse cx="125" cy="225" rx="20" ry="12" fill="#64748b" onClick={handlePokeTom} />
-          </svg>
-        </div>
-
+        <TalkingTomAvatar
+          action={tomAction}
+          onPet={handlePetTom}
+          onTickle={handleTickleTom}
+          onPoke={handlePokeTom}
+        />
         <p className="text-xs text-purple-200 font-bold mt-1">
           👆 Tap Tom&apos;s <strong>Head</strong> to pet, or <strong>Tummy</strong> to tickle!
         </p>

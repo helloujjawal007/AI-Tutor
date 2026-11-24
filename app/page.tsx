@@ -1,10 +1,33 @@
 "use client";
 
-import { useState } from "react";
-import LessonScreen from "@/components/LessonScreen";
-import TalkingTomReward from "@/components/TalkingTomReward";
+import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { CBSEClass, SubjectType } from "@/lib/curriculum/cbse-data";
 import { IndianLadyVoice } from "@/lib/speech/lady-voice";
+
+const LessonScreen = dynamic(() => import("@/components/LessonScreen"), {
+  ssr: false,
+  loading: () => (
+    <div className="min-h-screen flex items-center justify-center bg-purple-50">
+      <div className="flex flex-col items-center gap-3">
+        <div className="w-10 h-10 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
+        <p className="text-purple-700 font-bold text-sm">Loading classroom with teacher...</p>
+      </div>
+    </div>
+  ),
+});
+
+const TalkingTomReward = dynamic(() => import("@/components/TalkingTomReward"), {
+  ssr: false,
+  loading: () => (
+    <div className="min-h-screen flex items-center justify-center bg-indigo-950 text-white">
+      <div className="flex flex-col items-center gap-3">
+        <span className="text-4xl animate-bounce">🐱</span>
+        <p className="text-amber-300 font-bold text-sm">Talking Tom is getting ready...</p>
+      </div>
+    </div>
+  ),
+});
 
 export default function HomePage() {
   const [childName, setChildName] = useState("Aarav");
@@ -12,6 +35,10 @@ export default function HomePage() {
   const [selectedSubject, setSelectedSubject] = useState<SubjectType>("tables");
   const [hasStarted, setHasStarted] = useState(false);
   const [showTomDirect, setShowTomDirect] = useState(false);
+
+  useEffect(() => {
+    IndianLadyVoice.init();
+  }, []);
 
   const handleStart = () => {
     if (!childName.trim()) {

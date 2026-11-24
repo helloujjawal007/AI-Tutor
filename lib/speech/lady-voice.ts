@@ -1,21 +1,41 @@
 /**
  * Soft Indian Lady Teacher Speech Service (English Only)
- * Provides gentle, encouraging, and clear Indian female voice delivery in pure English for CBSE learners.
+ * High-Performance, Low-Latency Voice Engine with Voice Caching & Autoplay Guard
  */
 
 export class IndianLadyVoice {
   private static cachedVoice: SpeechSynthesisVoice | null = null;
+  private static watchdogTimer: any = null;
+  private static initialized: boolean = false;
 
   /**
-   * Find the warmest Indian English female voice available on the device
+   * Pre-warm and hook voices changed event for instant voice resolution
+   */
+  public static init(): void {
+    if (this.initialized || typeof window === "undefined" || !("speechSynthesis" in window)) return;
+    this.initialized = true;
+
+    // Eagerly resolve voice once voices are available
+    if (window.speechSynthesis.onvoiceschanged !== undefined) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        this.cachedVoice = null;
+        this.getBestVoice();
+      };
+    }
+    this.getBestVoice();
+  }
+
+  /**
+   * Fast O(1) Cached Voice Lookup for Indian English Female voice
    */
   public static getBestVoice(): SpeechSynthesisVoice | null {
+    if (this.cachedVoice) return this.cachedVoice;
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return null;
 
     const voices = window.speechSynthesis.getVoices();
     if (!voices || voices.length === 0) return null;
 
-    // Prioritize Indian English female voice profiles (English only)
+    // Prioritize Indian English female voice profiles
     const indianEnglishFemalePatterns = [
       /veena/i,
       /kajal/i,
@@ -34,7 +54,8 @@ export class IndianLadyVoice {
       /female/i,
     ];
 
-    for (const pattern of indianEnglishFemalePatterns) {
+    for (let i = 0; i < indianEnglishFemalePatterns.length; i++) {
+      const pattern = indianEnglishFemalePatterns[i];
       const match = voices.find((v) => pattern.test(v.name) || pattern.test(v.lang));
       if (match) {
         this.cachedVoice = match;
@@ -44,11 +65,12 @@ export class IndianLadyVoice {
 
     // Fallback to any English voice
     const englishFallback = voices.find((v) => v.lang.startsWith("en"));
-    return englishFallback || voices[0] || null;
+    this.cachedVoice = englishFallback || voices[0] || null;
+    return this.cachedVoice;
   }
 
   /**
-   * Speak in sweet, soft English at a clear, patient teacher pace
+   * Speak in sweet, soft English at a clear, patient teacher pace with watchdog recovery
    */
   public static speak(
     text: string,
@@ -64,35 +86,51 @@ export class IndianLadyVoice {
       return;
     }
 
-    window.speechSynthesis.cancel();
+    if (this.watchdogTimer) clearTimeout(this.watchdogTimer);
 
-    const utterance = new SpeechSynthesisUtterance(text);
-    // Gentle, pleasant Indian teacher English pitch and clear pacing
-    utterance.pitch = options.pitch ?? 1.12;
-    utterance.rate = options.rate ?? 0.88;
-    utterance.volume = 1.0;
+    try {
+      window.speechSynthesis.cancel();
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+      }
 
-    const voice = this.getBestVoice();
-    if (voice) {
-      utterance.voice = voice;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.pitch = options.pitch ?? 1.12;
+      utterance.rate = options.rate ?? 0.88;
+      utterance.volume = 1.0;
+
+      const voice = this.getBestVoice();
+      if (voice) {
+        utterance.voice = voice;
+      }
+
+      let hasEnded = false;
+      const handleEnd = () => {
+        if (hasEnded) return;
+        hasEnded = true;
+        if (this.watchdogTimer) clearTimeout(this.watchdogTimer);
+        options.onEnd?.();
+      };
+
+      utterance.onstart = () => {
+        options.onStart?.();
+      };
+
+      utterance.onend = handleEnd;
+      utterance.onerror = handleEnd;
+
+      // Watchdog timeout to prevent speech lockup on browser audio stall
+      const estimatedDurationMs = Math.max(1500, text.length * 110);
+      this.watchdogTimer = setTimeout(handleEnd, estimatedDurationMs);
+
+      window.speechSynthesis.speak(utterance);
+    } catch {
+      options.onEnd?.();
     }
-
-    utterance.onstart = () => {
-      options.onStart?.();
-    };
-
-    utterance.onend = () => {
-      options.onEnd?.();
-    };
-
-    utterance.onerror = () => {
-      options.onEnd?.();
-    };
-
-    window.speechSynthesis.speak(utterance);
   }
 
   public static stop(): void {
+    if (this.watchdogTimer) clearTimeout(this.watchdogTimer);
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
       window.speechSynthesis.cancel();
     }
