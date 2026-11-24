@@ -70,6 +70,166 @@ export function calculateNextDue(box: number, baseDate: Date = new Date()): Date
   return result;
 }
 
+/** LocalStorage key prefix for Tables Buddy progress */
+export const LS_KEY_PREFIX = "tables-buddy-";
+
+/**
+ * Fallback to LocalStorage when Supabase is unavailable.
+ * Records an attempt and updates the SRS box position using LocalStorage.
+ */
+export function recordAttemptLocalStorageFallback(
+  childId: string,
+  multiplicand: number,
+  multiplier: number,
+  wasCorrect: boolean,
+  attemptNumber: number
+): { box: number; mastered: boolean; nextDue: Date; weakCount: number } | null {
+  try {
+    const lsKey = `${LS_KEY_PREFIX}${childId}-${multiplicand}x${multiplier}`;
+    let progress: {
+      box: number;
+      weak_count: number;
+      last_seen: string;
+      next_due: string | null;
+    } | null = null;
+
+    const existing = localStorage.getItem(lsKey);
+    if (existing) {
+      progress = JSON.parse(existing);
+    }
+
+    if (!progress) {
+      // Create new entry
+      const box = wasCorrect ? 1 : 1;
+      const weakCount = wasCorrect ? 0 : 1;
+      const lastSeen = new Date().toISOString();
+      const nextDue = calculateNextDue(box);
+
+      progress = {
+        box,
+        weak_count: weakCount,
+        last_seen: lastSeen,
+        next_due: nextDue.toISOString(),
+      };
+      localStorage.setItem(lsKey, JSON.stringify(progress));
+    } else {
+      // Update existing entry
+      const newBox = updateLeitnerBox(progress.box, wasCorrect);
+      const newWeakCount = wasCorrect ? 0 : progress.weak_count + 1;
+      const mastered = isLineMastered(newBox);
+      const nextDue = mastered ? null : calculateNextDue(newBox);
+
+      progress = {
+        box: newBox,
+        weak_count: newWeakCount,
+        last_seen: new Date().toISOString(),
+        next_due: nextDue ? nextDue.toISOString() : null,
+      };
+
+      localStorage.setItem(lsKey, JSON.stringify(progress));
+    }
+
+    return {
+      box: progress!.box,
+      mastered: isLineMastered(progress!.box),
+      nextDue: new Date(progress!.next_due || calculateNextDue(progress!.box).toString()),
+      weakCount: progress!.weak_count,
+    };
+  } catch (err) {
+    console.error("LocalStorage fallback failed:", err);
+    return null;
+  }
+}
+
+/**
+ * Gets progress from LocalStorage.
+ * Returns null if no progress found.
+ */
+export function getProgressLocalStorage(
+  childId: string,
+  multiplicand: number,
+  multiplier: number
+): { box: number; mastered: boolean; nextDue: Date; weakCount: number } | null {
+  try {
+    const lsKey = `${LS_KEY_PREFIX}${childId}-${multiplicand}x${multiplier}`;
+    const existing = localStorage.getItem(lsKey);
+
+    if (!existing) return null;
+
+    const progress: {
+      box: number;
+      weak_count: number;
+      last_seen: string;
+      next_due: string | null;
+    } = JSON.parse(existing);
+
+    return {
+      box: progress.box,
+      mastered: isLineMastered(progress.box),
+      nextDue: new Date(progress.next_due || calculateNextDue(progress.box).toString()),
+      weakCount: progress.weak_count,
+    };
+  } catch (err) {
+    console.error("Error reading LocalStorage progress:", err);
+    return null;
+  }
+}
+
+/**
+ * Clears all LocalStorage progress for a child
+ */
+export function clearProgressLocalStorage(childId: string): void {
+  const keysToClear: string[] = [];
+
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key && key.startsWith(LS_KEY_PREFIX)) {
+      keysToClear.push(key);
+    }
+  }
+
+  keysToClear.forEach(key => localStorage.removeItem(key));
+}
+
+/**
+ * Exports all progress data as JSON for backup/sync
+ */
+export function exportProgressLocalStorage(childId: string): Record<string, any> {
+  const progress: Record<string, any> = {};
+
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key && key.startsWith(LS_KEY_PREFIX)) {
+      const value = JSON.parse(localStorage.getItem(key) || "{}");
+      const { next_due, last_seen, ...data } = value;
+      progress[key] = data;
+    }
+  }
+
+  return progress;
+}
+
+/**
+ * Imports progress data from JSON backup
+ * Returns count of records imported
+ */
+export function importProgressLocalStorage(childId: string, progressData: Record<string, any>): number {
+  let imported = 0;
+
+  for (const [key, data] of Object.entries(progressData)) {
+    try {
+      if (data.box !== undefined && data.weak_count !== undefined) {
+        localStorage.setItem(key, JSON.stringify(data));
+        imported++;
+      }
+    } catch (err) {
+      console.error(`Failed to import progress key ${key}:`, err);
+    }
+  }
+
+  return imported;
+}
+
 /**
  * Records an attempt and updates the SRS box position.
  * This is a framework-agnostic version that takes supabase as a parameter.
